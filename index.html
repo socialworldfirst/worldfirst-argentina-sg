@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
-<title>WorldFirst — Internal</title>
+<meta name="robots" content="noindex">
+<title>Win a signed Argentina team jersey | WorldFirst</title>
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 /* Satoshi, AFA / co-brand typeface (used on co-branded campaign copy) */
 @font-face{font-family:'Satoshi';src:url('assets/fonts/Satoshi-Regular.otf') format('opentype');font-weight:400;font-display:swap}
@@ -123,45 +122,103 @@
 
   .chat{position:fixed;right:22px;bottom:22px;width:56px;height:56px;border-radius:50%;background:#ff0051;box-shadow:0 8px 24px rgba(255,0,81,.4);z-index:50}
   @media(max-width:900px){.hero-in,.grid3,.sblock{grid-template-columns:1fr}.hero-l h1{font-size:38px}.fcols{grid-template-columns:1fr 1fr}}
-
-
-#gate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#fff;z-index:9999;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Segoe UI',Inter,sans-serif}
-#gate-card{width:300px;text-align:center}
-#gate-card h2{font-size:15px;font-weight:600;margin-bottom:18px;color:#111418;letter-spacing:.02em}
-#gate-input{width:100%;padding:11px 14px;border:1px solid #d7dadf;border-radius:9px;font-size:14px;outline:none;text-align:center}
-#gate-input:focus{border-color:#111418}
-#gate-btn{width:100%;margin-top:10px;padding:11px;border:none;border-radius:9px;background:#111418;color:#fff;font-size:14px;font-weight:600;cursor:pointer}
-#gate-err{margin-top:10px;font-size:12px;color:#b4541b;min-height:14px}
-#lockdev{position:fixed;bottom:14px;right:16px;font-size:11px;color:#9aa1aa;text-decoration:none;z-index:9998}
-#lockdev:hover{color:#111418}
-body.locked #lockdev{display:none}
-body.locked{overflow:hidden}
-body.locked #content{filter:blur(20px);pointer-events:none}
-
 </style>
 </head>
-<body class="locked">
-<div id="gate"><div id="gate-card">
-  <h2>WORLDFIRST · INTERNAL</h2>
-  <form id="gate-form" onsubmit="return gateSubmit(event)">
-    <input id="gate-input" type="password" placeholder="password" autocomplete="off" autofocus>
-    <button id="gate-btn" type="submit">Enter</button>
-  </form>
-  <div id="gate-err"></div>
-</div></div>
-<div id="content" hidden></div>
-<a id="lockdev" href="#" onclick="localStorage.removeItem('sg_pw');location.reload();return false;">lock device</a>
-<script type="application/json" id="payload">{"v": 1, "salt": "01mVIz9sJIT72eumtS0Niw==", "iv": "7V4biju7CbYDuJeM", "iterations": 100000, "ciphertext": "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"}</script>
-<script>
-function b64ToBytes(b64){const bin=atob(b64);const a=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)a[i]=bin.charCodeAt(i);return a;}
-async function deriveKey(pw,salt,iter){const enc=new TextEncoder();const bk=await crypto.subtle.importKey("raw",enc.encode(pw),"PBKDF2",false,["deriveKey"]);return crypto.subtle.deriveKey({name:"PBKDF2",salt,iterations:iter,hash:"SHA-256"},bk,{name:"AES-GCM",length:256},false,["decrypt"]);}
-async function decryptPayload(pw){const b=JSON.parse(document.getElementById('payload').textContent);const key=await deriveKey(pw,b64ToBytes(b.salt),b.iterations);const plain=await crypto.subtle.decrypt({name:"AES-GCM",iv:b64ToBytes(b.iv)},key,b64ToBytes(b.ciphertext));return new TextDecoder().decode(plain);}
-function reveal(html){document.getElementById('content').innerHTML=html;document.getElementById('content').hidden=false;document.getElementById('gate').style.display='none';document.body.classList.remove('locked');try{initPage();}catch(e){}}
-async function gateSubmit(e){e.preventDefault();const inp=document.getElementById('gate-input');const err=document.getElementById('gate-err');err.textContent='';try{const h=await decryptPayload(inp.value);reveal(h);try{localStorage.setItem('sg_pw',inp.value);}catch(_){}}catch(ex){err.textContent='wrong password';inp.value='';inp.focus();}return false;}
-(async()=>{try{const c=localStorage.getItem('sg_pw');if(c){reveal(await decryptPayload(c));}}catch(_){try{localStorage.removeItem('sg_pw');}catch(__){}}})();
-function initPage(){
-/* no page js */
-}
-</script>
+<body>
+
+  <div class="ann">Win a signed Argentina national team jersey with WorldFirst <a href="#how">See how to enter</a></div>
+
+  <div class="nav">
+    <img class="logo" src="assets/logo.svg" alt="WorldFirst">
+    <div class="mid"><a href="#">Business</a><a href="#">Enterprise</a><a href="#">About Us</a></div>
+    <div class="right">
+      <div class="globe"><img src="assets/globe.webp" alt=""></div>
+      <a class="login" href="#">Login</a><a class="signup" href="#">Sign Up</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-in">
+      <div class="hero-l">
+        <h1>Win a signed <span class="rose">Argentina</span> team jersey</h1>
+        <p class="sub">Open a World Card and make your first eligible payment for your chance to win a signed Argentina national team jersey, signed by the squad including the captain.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#" style="font-size:16px;padding:14px 30px">Get a World Card</a>
+          <a class="seerules" href="rules.html">See full rules &rarr;</a>
+        </div>
+        <p class="micro">Open to eligible business customers in <span class="tbd">Singapore</span>. First eligible payment of <span class="tbd">SGD 500</span> between <span class="tbd">16 June 2026</span> and <span class="tbd">31 July 2026 (UK time)</span>. One entry per customer.</p>
+      </div>
+      <div class="hero-r">
+        <div class="photopanel">
+          <img class="team" src="assets/approved_4.png" alt="Argentina national team in official kit">
+          <span class="herolock" style="position:absolute;left:18px;top:18px;display:inline-flex;flex-direction:column;align-items:center;gap:9px;filter:drop-shadow(0 2px 9px rgba(0,0,0,.6))"><span style="display:inline-flex;align-items:center;gap:12px"><img src="assets/afa_crest_color.svg" alt="AFA" style="height:52px"><span style="width:1px;height:36px;background:rgba(255,255,255,.6)"></span><img src="assets/logo.svg" alt="WorldFirst" style="height:21px;filter:brightness(0) invert(1)"></span><span style="font-family:'Satoshi',sans-serif;font-weight:700;font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:#fff;text-align:center;line-height:1.35">Official Regional Sponsor of the<br>Argentine National Football Team</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO ENTER -->
+  <section class="how wrap" id="how">
+    <h2 class="sechead"><span class="rose">How</span> to enter</h2>
+    <div class="grid3">
+      <div class="fcard"><div class="step">STEP 1</div><h3>Open a World Card</h3><p>It's free to get started, and that sets up your entry.</p><div class="arrow"></div></div>
+      <div class="fcard"><div class="step">STEP 2</div><h3>Make your first eligible payment</h3><p>Spend once to qualify, a World Card payment of <span class="tbd">SGD 500</span> or more.</p><div class="arrow"></div></div>
+      <div class="fcard"><div class="step">STEP 3</div><h3>You're entered into the draw</h3><p>No further action. Three winners are drawn at random on the draw date.</p><div class="arrow"></div></div>
+    </div>
+  </section>
+
+  <!-- PRIZE -->
+  <section class="sol wrap">
+    <div class="sblock">
+      <div class="vis"><div class="prizevis photo"><img class="bg" src="assets/approved_5.png" alt="Argentina national team in official kit"><div class="scrim"></div><img class="cr" src="assets/afa_crest_color.svg" alt="AFA"><div class="big">3</div><div class="lab">signed Argentina team jerseys</div></div></div>
+      <div class="txt">
+        <div class="eyebrow">The prize</div>
+        <h2>Three signed Argentina national team jerseys</h2>
+        <p>Three winners, one signed jersey each, signed by the squad including the captain, drawn at random from all eligible entrants. Draw date <span class="tbd">10 August 2026</span>.</p>
+        <p>The prize is the signed jersey only. No cash alternative.</p>
+        <a class="more" href="rules.html">See full rules</a>
+      </div>
+    </div>
+
+    <div class="sblock">
+      <div class="txt">
+        <div class="eyebrow">Am I eligible?</div>
+        <h2>Open a card, make a payment, you're in</h2>
+        <div class="checks">
+          <div><span class="ck"></span>You have a World Card, free to open</div>
+          <div><span class="ck"></span>You make your first eligible payment in the promotion window</div>
+          <div><span class="ck"></span>Your account is active and in good standing</div>
+        </div>
+        <a class="more" href="rules.html">Read the full terms</a>
+      </div>
+      <div class="vis"><div class="photovis"><img src="assets/approved_2.png" alt="Argentina national team in official kit"></div></div>
+    </div>
+  </section>
+
+  <!-- FOOTER CTA -->
+  <section class="fcta">
+    <h2>Open a card. Make a payment. Win a signed Argentina jersey.</h2>
+    <p>The same World Card that saves on every business expense could win you a signed Argentina national team jersey, signed by the squad including the captain.</p>
+    <div class="row"><a class="g" href="#">Get a World Card</a><a class="c" href="rules.html">See full rules</a></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="fcols">
+        <div><h4>Product</h4><a>World Account</a><a>Receive</a><a>Pay</a><a>FX</a><a>World Card</a></div>
+        <div><h4>Solutions</h4><a>E-commerce Seller Solution</a><a>Corporate Payment Solution</a><a>Pay into China Solution</a></div>
+        <div><h4>Resources</h4><a>User Guides</a><a>FAQs</a><a>Partner Resources</a></div>
+        <div><h4>Security</h4><a>Legal</a><a>Compliance</a><a>Complaints</a><a>Privacy Policy</a></div>
+        <div><h4>Company</h4><a>About WorldFirst</a><a>Why WorldFirst</a><a>Contact Us</a><a>Refer and Earn</a></div>
+        <div class="news"><h4>Sign up to our newsletter</h4><div class="sub"><input placeholder="Enter your email"><button>Subscribe</button></div></div>
+      </div>
+      <div class="legal">WorldFirst is part of the Ant International / Alipay+ ecosystem, an Official Regional Sponsor of the Argentine National Football Team. The AFA crest, Argentina national team imagery and related marks are used under licence via Ant International. Promotion open to eligible business World Card holders in Singapore, <span class="tbd">16 June 2026</span> to <span class="tbd">31 July 2026 (UK time)</span>. Prize is a signed official Argentina national team jersey, hand-signed by the squad including the captain; no cash alternative. Individual players are not named and no individual-player endorsement is implied.</div>
+      <div class="fbar"><span>&copy; 2026, WorldFirst. Operated by World First Asia Pte. Ltd., Singapore.</span><span>&#127760; Global</span></div>
+    </div>
+  </footer>
+
+  <div class="chat"></div>
 </body>
 </html>
