@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>AFA × World Card — Committed Floor + Opportunistic Adds</title>
+<title>AFA × World Card — Days-of-Impact Budget</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -19,75 +19,80 @@ body{font-family:'Poppins',sans-serif;background:#f4f5f6;color:#1f2323;-webkit-f
 .card>h2.k{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9aa1a1;font-weight:700;margin-bottom:6px}
 .card>p.sub{font-size:13.4px;color:#5b626a;line-height:1.55;margin-bottom:14px}
 .calc{border:1.5px solid #ffd6e2;background:linear-gradient(180deg,#fff,#fffafc)}
-.ins{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:16px}
-.inb{border:1px solid #eceef0;border-radius:12px;padding:13px 14px}
-.inb.fix{border-color:#cfd3d7;background:#fafbfc}
-.inb.opp{border-color:#ffd6e2;background:#fffafc}
+.ins{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px}
 .inb .t{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#9aa1a1;margin-bottom:7px}
-.inb input{font-family:'Poppins';font-size:19px;font-weight:700;padding:8px 11px;border:1.5px solid #e0e3e6;border-radius:9px;width:100%;color:#1f2323}
-.inb .d{font-size:11px;color:#aab0b6;margin-top:6px;line-height:1.4}
-.upl{margin-bottom:18px}.upl label{font-size:13px;color:#5b626a}
+.inb input{font-family:'Poppins';font-weight:700;padding:9px 12px;border:1.5px solid #e0e3e6;border-radius:10px;color:#1f2323}
+.inb input#rate{font-size:26px;width:150px}
+.inb input#ld{font-size:18px;width:90px}
+.inb .d{font-size:11px;color:#aab0b6;margin-top:6px}
+.upl{margin:8px 0 18px}.upl label{font-size:13px;color:#5b626a}
 .upl input[type=range]{width:300px;display:block;margin:8px 0 4px;accent-color:#ff0051}.upl .hint{font-size:11.5px;color:#aab0b6}
-.bighead{display:flex;gap:30px;flex-wrap:wrap;margin:6px 0 16px}
+.bighead{display:flex;gap:28px;flex-wrap:wrap;margin:6px 0 14px}
 .bighead .b .v{font-size:25px;font-weight:800;letter-spacing:-.6px}
 .bighead .b .v.hot{color:#ff0051}
-.bighead .b .c{font-size:11.5px;color:#9aa1a1;text-transform:uppercase;letter-spacing:.04em;font-weight:600;margin-top:2px}
-.flmark{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#9aa1a1;margin:2px 0 8px}
+.bighead .b .s{font-size:12px;color:#69727d;font-weight:600}
+.bighead .b .c{font-size:11px;color:#9aa1a1;text-transform:uppercase;letter-spacing:.04em;font-weight:600;margin-top:2px}
+.daysbar{display:flex;height:34px;border-radius:9px;overflow:hidden;margin:6px 0 4px;font-size:11px;font-weight:700;color:#fff}
+.daysbar .seg{display:flex;align-items:center;justify-content:center;white-space:nowrap}
+.seg.up{background:#9aa1a1}.seg.ld{background:#6b7178}.seg.opp{background:#ff0051}.seg.ch{background:#b3003a}
+.legend2{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:#5b626a;margin-bottom:6px}
+.legend2 span{display:inline-flex;align-items:center;gap:6px}.legend2 .sw{width:12px;height:12px;border-radius:3px}
+.flmark{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#9aa1a1;margin:14px 0 8px}
 .funnel{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
 .ft{border:1px solid #eceef0;border-radius:12px;padding:13px 10px;text-align:center;background:#fff}
-.ft .n{font-size:19px;font-weight:800;letter-spacing:-.5px}
-.ft .l{font-size:10.5px;color:#9aa1a1;margin-top:3px;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+.ft .n{font-size:19px;font-weight:800;letter-spacing:-.5px}.ft .l{font-size:10.5px;color:#9aa1a1;margin-top:3px;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
 .ft.hot{border-color:#ff0051}.ft.hot .n{color:#ff0051}
 .src{font-size:11.5px;color:#aab0b6;margin-top:8px}
 table{width:100%;border-collapse:collapse;font-size:13.2px}
 th,td{text-align:left;padding:10px 11px;border-bottom:1px solid #eef0f2;vertical-align:middle}
 th{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#9aa1a1;font-weight:700}
 td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
-.barwrap{background:#f4f0f2;border-radius:6px;width:150px;overflow:hidden}.bar{height:11px;border-radius:6px;background:#ff0051;opacity:.85;min-width:3px}
-.tagf{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#69727d;background:#eef0f2;padding:2px 6px;border-radius:5px}
-.tago{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#ff0051;background:#fff0f4;padding:2px 6px;border-radius:5px}
+.barwrap{background:#f4f0f2;border-radius:6px;width:140px;overflow:hidden}.bar{height:11px;border-radius:6px;background:#ff0051;opacity:.85;min-width:3px}
 .chartwrap{width:100%;overflow-x:auto}svg{display:block;width:100%;height:auto}
-.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;font-size:12.5px;color:#5b626a}
-.legend span{display:inline-flex;align-items:center;gap:7px}.sw{width:14px;height:4px;border-radius:2px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;font-size:12.5px;color:#5b626a}.legend span{display:inline-flex;align-items:center;gap:7px}.sw{width:14px;height:4px;border-radius:2px}
 .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.ph{border:1px solid #eceef0;border-radius:13px;padding:15px 15px}
-.ph .d{font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;color:#9aa1a1}
-.ph h3{font-size:15px;font-weight:700;margin:5px 0 7px}.ph p{font-size:12.6px;color:#5b626a;line-height:1.48}
-.ph.peak{border-color:#ff0051;border-width:1.5px}.ph.peak h3{color:#ff0051}
+.ph{border:1px solid #eceef0;border-radius:13px;padding:15px 15px}.ph .d{font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;color:#9aa1a1}
+.ph h3{font-size:15px;font-weight:700;margin:5px 0 7px}.ph p{font-size:12.6px;color:#5b626a;line-height:1.48}.ph.peak{border-color:#ff0051;border-width:1.5px}.ph.peak h3{color:#ff0051}
 .callout{background:#fff7f9;border:1px solid #ffd6e2;border-radius:12px;padding:15px 18px;font-size:13.8px;color:#5b626a;line-height:1.6}.callout b{color:#1f2323}
 .note{font-size:13.6px;color:#5b626a;line-height:1.66}.note b{color:#1f2323}
-@media(max-width:900px){.ins,.phases{grid-template-columns:1fr 1fr}.funnel{grid-template-columns:repeat(3,1fr)}.barwrap{width:90px}}
+@media(max-width:900px){.phases{grid-template-columns:1fr 1fr}.funnel{grid-template-columns:repeat(3,1fr)}.barwrap{width:80px}}
 </style>
 </head>
 <body>
 <div class="shell">
 
   <div class="dhead">
-    <div class="tag">AFA × World Card · committed floor + opportunistic adds · 25 Jun 2026</div>
-    <h1>Two things we spend no matter what, the rest is opportunistic</h1>
-    <p>Argentina are already in the Round of 32, so the run-up to it is a <b>fixed, committed</b> spend. And the captain's <b>last World Cup match</b> — whenever it lands, an early exit or the final — gets a big burst we'll commit regardless. Everything in between (R16 → QF → SF → Final → win) is an <b>opportunistic add</b> we only pay for if they get there. So the floor is real money, and the ceiling is a sane ~2–2.5×, not 6×.</p>
+    <div class="tag">AFA × World Card · days-of-impact budget · 25 Jun 2026</div>
+    <h1>One lever: spend per day. Everything else is days.</h1>
+    <p>The ratio is just <b>days of impact</b>. Argentina are locked as group winners, so their R32 is fixed — <b>July 3, Miami</b>. From today to then is committed. The captain's last match gets a fixed 5-day tail. And every extra day they stay alive is one more opportunistic day. Set the <b>per-day rate</b>; the days do the rest.</p>
   </div>
 
   <!-- CALCULATOR -->
   <div class="card calc">
-    <h2 class="k">Set the pillars — the page recomputes</h2>
-    <p class="sub">All conversions off the SG + MY pilot (US$54 per sign-up start). Two fixed inputs build your committed floor; the opportunistic pool is shared across the four knockout matches + a win, weighted by influence.</p>
+    <h2 class="k">The one number that matters: per-day spend</h2>
+    <p class="sub">Days from real fixtures. Committed = 9 upfront (Jun 25→Jul 3) + your last-dance tail. Opportunistic = every day they survive past R32 (up to Jul 19). Conversions off the SG+MY pilot (US$54 / sign-up start).</p>
     <div class="ins">
-      <div class="inb fix"><div class="t">① Fixed upfront</div><input id="inFixed" type="number" value="400" min="0" step="50"><div class="d">Always-on awareness, now → their R32 match. Committed (they're already in).</div></div>
-      <div class="inb fix"><div class="t">② Last-dance burst</div><input id="inLast" type="number" value="400" min="0" step="50"><div class="d">Big spend on the captain's final match, whenever it falls. Committed no matter what.</div></div>
-      <div class="inb opp"><div class="t">③ Opportunistic pool (max)</div><input id="inOpp" type="number" value="1000" min="0" step="50"><div class="d">Only if they advance. Split across R16/QF/SF/Final/Win by influence.</div></div>
+      <div class="inb"><div class="t">Spend per day (US$)</div><input id="rate" type="number" value="50" min="0" step="10"><div class="d">Total daily across MY · SG · TH · ID.</div></div>
+      <div class="inb"><div class="t">Last-dance tail (days)</div><input id="ld" type="number" value="5" min="0" step="1"><div class="d">After the captain's final match.</div></div>
     </div>
     <div class="upl">
       <label>Conversion uplift from router + product creative: <b id="upliftLab">×1.0 (pilot baseline)</b></label>
       <input id="uplift" type="range" min="1" max="3" step="0.1" value="1">
-      <span class="hint">Pilot's land→sign-up was throttled by the login wall; the router + product creative should lift it. Slide to model 1.5–2×.</span>
+      <span class="hint">Pilot's land→sign-up was throttled by the login wall; router + product creative should lift it. Slide to model 1.5–2×.</span>
     </div>
     <div class="bighead">
-      <div class="b"><div class="v" id="hFloor">—</div><div class="c">Committed floor (always spent)</div></div>
-      <div class="b"><div class="v hot" id="hExp">—</div><div class="c">Expected total (odds-weighted)</div></div>
-      <div class="b"><div class="v" id="hCeil">—</div><div class="c">Ceiling · win it (<span id="hRatio">—</span>)</div></div>
+      <div class="b"><div class="v" id="hFloor">—</div><div class="s" id="hFloorD">—</div><div class="c">Committed floor · out R32</div></div>
+      <div class="b"><div class="v hot" id="hExp">—</div><div class="s" id="hExpD">—</div><div class="c">Expected (odds-weighted)</div></div>
+      <div class="b"><div class="v" id="hCeil">—</div><div class="s" id="hCeilD">—</div><div class="c">Ceiling · win it (<span id="hRatio">—</span>)</div></div>
     </div>
-    <div class="flmark">Expected outcome — odds-weighted spend, what it buys</div>
+    <div class="legend2">
+      <span><span class="sw" style="background:#9aa1a1"></span>Upfront (9d, fixed)</span>
+      <span><span class="sw" style="background:#6b7178"></span>Last-dance (fixed)</span>
+      <span><span class="sw" style="background:#ff0051"></span>Opportunistic (per day alive)</span>
+      <span><span class="sw" style="background:#b3003a"></span>Champions tail</span>
+    </div>
+    <div class="daysbar" id="daysbar"></div>
+    <div class="flmark">Expected outcome — what the odds-weighted spend buys</div>
     <div class="funnel">
       <div class="ft"><div class="n" id="outSpend">—</div><div class="l">Spend</div></div>
       <div class="ft"><div class="n" id="outImpr">—</div><div class="l">Impressions</div></div>
@@ -96,34 +101,32 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
       <div class="ft hot"><div class="n" id="outRS">—</div><div class="l">Sign-up starts</div></div>
       <div class="ft hot"><div class="n" id="outSU">—</div><div class="l">Completed</div></div>
     </div>
-    <p class="src">Floor = ① + ②, spent whatever happens. Ceiling = floor + full opportunistic pool (champions). Sign-up starts shown per outcome below.</p>
   </div>
 
-  <!-- SPENDING RANGE -->
+  <!-- RANGE -->
   <div class="card">
-    <h2 class="k">Spending range — by how far Argentina go</h2>
-    <p class="sub">Floor is committed. Each row adds the opportunistic tranche for the round reached. "× floor" = the sane multiple you actually flex across.</p>
+    <h2 class="k">Spending range — by days survived</h2>
+    <p class="sub">Each outcome = total days × your per-day rate. Days = 9 upfront + (days alive past R32) + last-dance tail (+ champions tail on a win).</p>
     <table>
-      <tr><th>If Argentina…</th><th>Chance</th><th>Make-up</th><th>Total spend</th><th>× floor</th><th>Range</th><th>Sign-up starts</th></tr>
-      <tr><td class="r">Out in R32</td><td>13%</td><td><span class="tagf">floor only</span></td><td id="os0">—</td><td id="ox0">—</td><td><div class="barwrap"><div class="bar" id="ob0"></div></div></td><td id="or0">—</td></tr>
-      <tr><td class="r">Out in R16</td><td>20%</td><td><span class="tagf">floor</span> <span class="tago">+R16</span></td><td id="os1">—</td><td id="ox1">—</td><td><div class="barwrap"><div class="bar" id="ob1"></div></div></td><td id="or1">—</td></tr>
-      <tr><td class="r">Out in quarter</td><td>22%</td><td><span class="tagf">floor</span> <span class="tago">+R16+QF</span></td><td id="os2">—</td><td id="ox2">—</td><td><div class="barwrap"><div class="bar" id="ob2"></div></div></td><td id="or2">—</td></tr>
-      <tr><td class="r">Out in semi</td><td>18%</td><td><span class="tagf">floor</span> <span class="tago">+…+SF</span></td><td id="os3">—</td><td id="ox3">—</td><td><div class="barwrap"><div class="bar" id="ob3"></div></div></td><td id="or3">—</td></tr>
-      <tr><td class="r hot">Reach the final</td><td>12%</td><td><span class="tagf">floor</span> <span class="tago">+…+Final</span></td><td id="os4">—</td><td id="ox4">—</td><td><div class="barwrap"><div class="bar" id="ob4"></div></div></td><td id="or4">—</td></tr>
-      <tr><td class="r hot">WIN it</td><td>15%</td><td><span class="tagf">floor</span> <span class="tago">+ all + win</span></td><td id="os5">—</td><td id="ox5">—</td><td><div class="barwrap"><div class="bar" id="ob5"></div></div></td><td id="or5">—</td></tr>
+      <tr><th>If Argentina…</th><th>Chance</th><th>Total days</th><th>Total spend</th><th>× floor</th><th>Range</th><th>Sign-up starts</th></tr>
+      <tr><td class="r">Out in R32 (Jul 3)</td><td>13%</td><td id="od0">—</td><td id="os0">—</td><td id="ox0">—</td><td><div class="barwrap"><div class="bar" id="ob0"></div></div></td><td id="or0">—</td></tr>
+      <tr><td class="r">Out in R16 (~Jul 6)</td><td>20%</td><td id="od1">—</td><td id="os1">—</td><td id="ox1">—</td><td><div class="barwrap"><div class="bar" id="ob1"></div></div></td><td id="or1">—</td></tr>
+      <tr><td class="r">Out in quarter (~Jul 10)</td><td>22%</td><td id="od2">—</td><td id="os2">—</td><td id="ox2">—</td><td><div class="barwrap"><div class="bar" id="ob2"></div></div></td><td id="or2">—</td></tr>
+      <tr><td class="r">Out in semi (~Jul 14)</td><td>18%</td><td id="od3">—</td><td id="os3">—</td><td id="ox3">—</td><td><div class="barwrap"><div class="bar" id="ob3"></div></div></td><td id="or3">—</td></tr>
+      <tr><td class="r hot">Reach the final (Jul 19)</td><td>12%</td><td id="od4">—</td><td id="os4">—</td><td id="ox4">—</td><td><div class="barwrap"><div class="bar" id="ob4"></div></div></td><td id="or4">—</td></tr>
+      <tr><td class="r hot">WIN it</td><td>15%</td><td id="od5">—</td><td id="os5">—</td><td id="ox5">—</td><td><div class="barwrap"><div class="bar" id="ob5"></div></div></td><td id="or5">—</td></tr>
     </table>
-    <div class="callout" style="margin-top:16px"><b>Read it as:</b> you commit the floor (<span id="cFloor">—</span>) today; realistically you'll spend about <b id="cExp">—</b>; worst case you stop at the floor, best case you reach <span id="cCeil">—</span> as champions. You only ever pay for rounds they actually reach, except the two committed pillars.</div>
+    <div class="callout" style="margin-top:16px"><b>Read it as:</b> you set <b id="cRate">—</b>/day. You commit the floor (<b id="cFloor">—</b> = <span id="cFloorD">—</span> days); realistically you'll spend <b id="cExp">—</b>; the ceiling is <span id="cCeil">—</span> as champions. You only pay for days they're actually alive, plus the two fixed pillars.</div>
   </div>
 
-  <!-- INFLUENCE CHART -->
+  <!-- CHART -->
   <div class="card">
-    <h2 class="k">Influence climb + per-stage budget</h2>
-    <p class="sub">Bold = Argentina keep winning. % = market chance to win that round. Bars = the budget at each stage (fixed pillars in grey-rose, opportunistic in rose; the final carries the last-dance burst).</p>
+    <h2 class="k">Influence climb + per-stage budget (days × rate)</h2>
+    <p class="sub">Bold = Argentina keep winning. % = market chance to win that round. Bars = spend at each stage = the days in it × your rate (grey = fixed, rose = opportunistic, final carries the last-dance tail).</p>
     <div class="chartwrap">
     <svg viewBox="0 0 1000 540" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff0051" stop-opacity="0.18"/><stop offset="100%" stop-color="#ff0051" stop-opacity="0"/></linearGradient></defs>
       <line x1="60" y1="330" x2="950" y2="330" stroke="#e6e8eb"/><line x1="60" y1="230" x2="950" y2="230" stroke="#f2f3f5"/><line x1="60" y1="130" x2="950" y2="130" stroke="#f2f3f5"/>
-      <text x="52" y="334" text-anchor="end" font-size="10" fill="#aab0b6">low</text><text x="52" y="134" text-anchor="end" font-size="10" fill="#aab0b6">peak</text>
       <g stroke="#c4c9ce" stroke-width="1.6" stroke-dasharray="4,4" fill="none"><path d="M235,213 L300,316"/><path d="M375,179 L440,316"/><path d="M515,143 L580,316"/><path d="M655,101 L720,314"/></g>
       <g font-size="9.5" fill="#aab0b6"><text x="305" y="328">out → fades</text><text x="445" y="328">out → fades</text><text x="585" y="328">out → fades</text><text x="725" y="326">out → fades</text></g>
       <polygon fill="url(#fill)" points="95,239 235,213 375,179 515,143 655,101 795,70 850,150 905,235 905,330 95,330"/>
@@ -134,37 +137,37 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
       <text x="795" y="36" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ff0051">LAST DANCE</text>
       <g font-size="10.5" fill="#69727d" text-anchor="middle">
         <text x="95" y="350">Group ✓</text><text x="95" y="362" font-size="9" fill="#9aa1a1">Jun 27</text>
-        <text x="235" y="350">R32</text><text x="235" y="362" font-size="9" fill="#9aa1a1">Jun 28-Jul 3</text>
+        <text x="235" y="350">R32 · Miami</text><text x="235" y="362" font-size="9" fill="#9aa1a1">Jul 3</text>
         <text x="375" y="350">R16</text><text x="375" y="362" font-size="9" fill="#9aa1a1">Jul 4-7</text>
         <text x="515" y="350">Quarter</text><text x="515" y="362" font-size="9" fill="#9aa1a1">Jul 9-11</text>
         <text x="655" y="350">Semi</text><text x="655" y="362" font-size="9" fill="#9aa1a1">Jul 14-15</text>
         <text x="795" y="350" font-weight="700" fill="#ff0051">FINAL</text><text x="795" y="362" font-size="9" fill="#ff0051">Jul 19</text>
       </g>
-      <text x="60" y="400" font-size="10.5" font-weight="700" fill="#9aa1a1">BUDGET AT EACH STAGE</text>
+      <text x="60" y="400" font-size="10.5" font-weight="700" fill="#9aa1a1">BUDGET AT EACH STAGE (days × rate)</text>
       <rect x="72" y="446" width="46" height="34" rx="3" fill="#b8bdc2"/><text id="bar0" x="95" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
-      <rect x="212" y="438" width="46" height="42" rx="3" fill="#b8bdc2"/><text id="bar1" x="235" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
-      <rect x="352" y="420" width="46" height="60" rx="3" fill="#ff0051" opacity="0.5"/><text id="bar2" x="375" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
-      <rect x="492" y="404" width="46" height="76" rx="3" fill="#ff0051" opacity="0.65"/><text id="bar3" x="515" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
-      <rect x="632" y="384" width="46" height="96" rx="3" fill="#ff0051" opacity="0.8"/><text id="bar4" x="655" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
-      <rect x="772" y="358" width="46" height="122" rx="3" fill="#ff0051"/><text id="bar5" x="795" y="495" text-anchor="middle" font-size="10.5" fill="#ff0051" font-weight="700">—</text>
-      <text x="795" y="514" text-anchor="middle" font-size="9" fill="#ff0051" font-weight="700">incl. last-dance</text>
+      <rect x="212" y="452" width="46" height="28" rx="3" fill="#b8bdc2"/><text id="bar1" x="235" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
+      <rect x="352" y="452" width="46" height="28" rx="3" fill="#ff0051" opacity="0.5"/><text id="bar2" x="375" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
+      <rect x="492" y="442" width="46" height="38" rx="3" fill="#ff0051" opacity="0.65"/><text id="bar3" x="515" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
+      <rect x="632" y="442" width="46" height="38" rx="3" fill="#ff0051" opacity="0.8"/><text id="bar4" x="655" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
+      <rect x="772" y="392" width="46" height="88" rx="3" fill="#ff0051"/><text id="bar5" x="795" y="495" text-anchor="middle" font-size="10.5" fill="#ff0051" font-weight="700">—</text>
+      <text x="795" y="514" text-anchor="middle" font-size="9" fill="#ff0051" font-weight="700">+ last-dance tail</text>
     </svg>
     </div>
     <div class="legend">
-      <span><span class="sw" style="background:#b8bdc2"></span>Fixed pillars (committed)</span>
-      <span><span class="sw" style="background:#ff0051"></span>Opportunistic add</span>
+      <span><span class="sw" style="background:#b8bdc2"></span>Fixed days (committed)</span>
+      <span><span class="sw" style="background:#ff0051"></span>Opportunistic days</span>
       <span class="rose">% = market chance to win that round</span>
     </div>
-    <p class="src">Odds referenced from Polymarket: Argentina ≈15% to win (2nd favourite). Refresh after each round. R32 dates lock once the group finishes Jun 27.</p>
+    <p class="src">R32 confirmed: Argentina (group J winners) vs Group H runner-up, Jul 3, Miami. Odds ref Polymarket (Argentina ≈15% to win). Later-round dates within official windows; refresh as the bracket resolves.</p>
   </div>
 
   <!-- PHASES -->
   <div class="card">
     <h2 class="k">The campaign period, in four moves</h2>
     <div class="phases">
-      <div class="ph"><div class="d">Now → Jun 27</div><h3>Warm up (fixed)</h3><p>Ride Messi's all-time-scorer moment. Committed awareness, all four markets.</p></div>
-      <div class="ph"><div class="d">Jun 28 → Jul 7</div><h3>Ramp</h3><p>R32 (fixed) + R16 (opportunistic). Build the retargeting pool.</p></div>
-      <div class="ph peak"><div class="d">Jul 9 → Jul 19</div><h3>Peak push</h3><p>QF → SF → Final. Opportunistic adds + the committed last-dance burst on Jul 19.</p></div>
+      <div class="ph"><div class="d">Jun 25 → Jul 3</div><h3>Upfront (fixed)</h3><p>9 committed days. Ride Messi's all-time-scorer moment, all four markets.</p></div>
+      <div class="ph"><div class="d">Jul 4 → Jul 7</div><h3>Opportunistic begins</h3><p>R16. Every day alive = one more day of spend. Build the retargeting pool.</p></div>
+      <div class="ph peak"><div class="d">Jul 9 → Jul 19</div><h3>Peak days</h3><p>QF → SF → Final, plus the fixed last-dance tail on the captain's final match.</p></div>
       <div class="ph"><div class="d">Jul 20 → Aug 17</div><h3>Harvest</h3><p>Afterglow. Flip to conversion, retarget the warmed pool. Draw Aug 31.</p></div>
     </div>
   </div>
@@ -172,7 +175,7 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
   <!-- CAVEAT -->
   <div class="card">
     <h2 class="k">How to run it live</h2>
-    <p class="note"><b>Two pillars are pre-committed</b> (upfront awareness + the last-dance burst); <b>pre-approve the opportunistic tranches now</b> so we release each within hours of a result. The moment they exit, unlocking stops at that row, and the spend-to-date flips to conversion harvest. The last-dance burst fires on whatever turns out to be the captain's final match, win or lose.</p>
+    <p class="note"><b>Pre-approve the per-day rate</b> and we simply keep the meter running each day they're alive, no re-approval per round. The two fixed pillars (9 upfront days + the 5-day last-dance tail) are committed; everything past Jul 3 is day-by-day and stops the moment they exit. <b>Optional refinement:</b> if a flat rate feels too even, we can let the deep-round days (QF/SF/Final) run at a higher per-day rate, the model already isolates them.</p>
   </div>
 
 </div>
@@ -180,38 +183,42 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
 <script>
 (function(){
   var imprPerD=899.0, clkPerD=10.90, landPerD=3.726, rsPerD=0.018676, suPerD=0.007004;
-  var W=[1.0,1.4,2.0,3.0,2.0], WSUM=9.4;          // R16,QF,SF,Final,Win
-  var PROB=[0.13,0.20,0.22,0.18,0.12,0.15];        // outR32,outR16,outQF,outSF,reachFinal(lose),win
-  var inF=document.getElementById('inFixed'), inL=document.getElementById('inLast'), inO=document.getElementById('inOpp'),
-      upl=document.getElementById('uplift'), uplLab=document.getElementById('upliftLab');
+  var UP=9, CH=3;                                  // upfront days, champions tail
+  var OPP=[0,3,7,11,16,16];                         // days alive past R32 by outcome
+  var PROB=[0.13,0.20,0.22,0.18,0.12,0.15];
+  var STAGEDAYS=[6,3,3,4,4,5];                       // per-stage day counts: group, R32, R16, QF, SF, final-window
+  var rate=document.getElementById('rate'), ld=document.getElementById('ld'), upl=document.getElementById('uplift'), uplLab=document.getElementById('upliftLab');
   function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
   function usd(n){ return 'US$'+fmt(n); }
   function set(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
   function recompute(){
-    var up=parseFloat(upl.value)||1, Fu=parseFloat(inF.value)||0, Fl=parseFloat(inL.value)||0, Bo=parseFloat(inO.value)||0;
-    var floor=Fu+Fl;
-    var O=W.map(function(w){return Bo*w/WSUM;});       // R16,QF,SF,Final,Win adds
-    var spend=[ floor, floor+O[0], floor+O[0]+O[1], floor+O[0]+O[1]+O[2], floor+O[0]+O[1]+O[2]+O[3], floor+O[0]+O[1]+O[2]+O[3]+O[4] ];
-    var exp=0; for(var i=0;i<6;i++) exp+=PROB[i]*spend[i];
-    var ceil=spend[5];
+    var R=parseFloat(rate.value)||0, LD=parseFloat(ld.value)||0, up=parseFloat(upl.value)||1;
+    var days=[];
+    for(var i=0;i<6;i++){ days[i]=UP+LD+OPP[i]+(i===5?CH:0); }
+    var spend=days.map(function(d){return R*d;});
+    var expD=0,exp=0; for(var i=0;i<6;i++){ expD+=PROB[i]*days[i]; exp+=PROB[i]*spend[i]; }
+    var floor=spend[0], ceil=spend[5];
     uplLab.textContent='×'+up.toFixed(1)+(up===1?' (pilot baseline)':'');
-    set('hFloor',usd(floor)); set('hExp',usd(exp)); set('hCeil',usd(ceil));
-    set('hRatio','×'+(floor>0?(ceil/floor).toFixed(1):'—'));
-    set('cFloor',usd(floor)); set('cExp',usd(exp)); set('cCeil',usd(ceil));
+    set('hFloor',usd(floor)); set('hFloorD',days[0]+' days'); set('hExp',usd(exp)); set('hExpD',expD.toFixed(0)+' days');
+    set('hCeil',usd(ceil)); set('hCeilD',days[5]+' days'); set('hRatio','×'+(floor>0?(ceil/floor).toFixed(1):'—'));
+    set('cRate',usd(R)); set('cFloor',usd(floor)); set('cFloorD',days[0]); set('cExp',usd(exp)); set('cCeil',usd(ceil));
     // funnel from expected
     set('outSpend',usd(exp)); set('outImpr',fmt(exp*imprPerD)); set('outClk',fmt(exp*clkPerD));
     set('outLand',fmt(exp*landPerD)); set('outRS',fmt(exp*rsPerD*up)); set('outSU',fmt(exp*suPerD*up));
     // range rows
     for(var j=0;j<6;j++){
-      set('os'+j,usd(spend[j])); set('ox'+j, floor>0?(spend[j]/floor).toFixed(1)+'×':'—'); set('or'+j,fmt(spend[j]*rsPerD*up));
+      set('od'+j,days[j]+'d'); set('os'+j,usd(spend[j])); set('ox'+j, floor>0?(spend[j]/floor).toFixed(1)+'×':'—'); set('or'+j,fmt(spend[j]*rsPerD*up));
       var bar=document.getElementById('ob'+j); if(bar) bar.style.width=(ceil>0?spend[j]/ceil*100:0).toFixed(1)+'%';
     }
-    // chart per-stage bars: group/R32 = fixed pillars; R16..SF = opp adds; final = O_final + last dance
-    set('bar0', '$'+fmt(Fu*0.45)); set('bar1', '$'+fmt(Fu*0.55));
-    set('bar2', '$'+fmt(O[0])); set('bar3', '$'+fmt(O[1])); set('bar4', '$'+fmt(O[2]));
-    set('bar5', '$'+fmt(O[3]+Fl));
+    // committed-days stacked bar
+    var seg=function(cls,d,lbl){ return d>0?'<div class="seg '+cls+'" style="flex:'+d+'">'+(d>=2?lbl:'')+'</div>':''; };
+    document.getElementById('daysbar').innerHTML =
+      seg('up',UP,UP+'d upfront')+seg('opp',OPP[5],OPP[5]+'d opportunistic')+seg('ld',LD,LD+'d last-dance')+seg('ch',CH,'+'+CH+'d champ');
+    // chart per-stage bars = stage days × rate; final stage adds last-dance tail
+    set('bar0','$'+fmt(R*STAGEDAYS[0])); set('bar1','$'+fmt(R*STAGEDAYS[1])); set('bar2','$'+fmt(R*STAGEDAYS[2]));
+    set('bar3','$'+fmt(R*STAGEDAYS[3])); set('bar4','$'+fmt(R*STAGEDAYS[4])); set('bar5','$'+fmt(R*(STAGEDAYS[5]+LD)));
   }
-  [inF,inL,inO,upl].forEach(function(el){ el.addEventListener('input',recompute); });
+  [rate,ld,upl].forEach(function(el){ el.addEventListener('input',recompute); });
   recompute();
 })();
 </script>
