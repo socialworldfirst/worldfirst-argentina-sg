@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>AFA × World Card — Goal Calculator + Influence Plan</title>
+<title>AFA × World Card — Baseline + Spending Range</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
@@ -20,28 +20,37 @@ body{font-family:'Poppins',sans-serif;background:#f4f5f6;color:#1f2323;-webkit-f
 .card>p.sub{font-size:13.4px;color:#5b626a;line-height:1.55;margin-bottom:14px}
 .calc{border:1.5px solid #ffd6e2;background:linear-gradient(180deg,#fff,#fffafc)}
 .calc .modes{display:inline-flex;border:1px solid #e0e3e6;border-radius:999px;overflow:hidden;margin-bottom:16px}
-.calc .modes button{border:none;background:#fff;font-family:'Poppins';font-size:13px;font-weight:500;padding:9px 18px;cursor:pointer;color:#69727d}
+.calc .modes button{border:none;background:#fff;font-family:'Poppins';font-size:13px;font-weight:500;padding:9px 16px;cursor:pointer;color:#69727d}
 .calc .modes button.on{background:#ff0051;color:#fff;font-weight:600}
 .calc .inrow{display:flex;align-items:center;gap:14px;margin-bottom:14px;flex-wrap:wrap}
-.calc .inrow label{font-size:13px;font-weight:600;color:#1f2323;min-width:160px}
-.calc .inrow input{font-family:'Poppins';font-size:20px;font-weight:700;padding:10px 14px;border:1.5px solid #e0e3e6;border-radius:10px;width:220px;color:#1f2323}
+.calc .inrow label{font-size:13px;font-weight:600;color:#1f2323;min-width:230px}
+.calc .inrow input{font-family:'Poppins';font-size:20px;font-weight:700;padding:10px 14px;border:1.5px solid #e0e3e6;border-radius:10px;width:200px;color:#1f2323}
 .calc .upl{margin-bottom:18px}
 .calc .upl label{font-size:13px;color:#5b626a}
 .calc .upl input[type=range]{width:300px;display:block;margin:8px 0 4px;accent-color:#ff0051}
 .calc .upl .hint{font-size:11.5px;color:#aab0b6}
-.funnel{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:4px}
-.ft{border:1px solid #eceef0;border-radius:12px;padding:14px 10px;text-align:center;background:#fff}
-.ft .n{font-size:20px;font-weight:800;letter-spacing:-.5px}
+.flmark{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#9aa1a1;margin:2px 0 8px}
+.funnel{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.ft{border:1px solid #eceef0;border-radius:12px;padding:13px 10px;text-align:center;background:#fff}
+.ft .n{font-size:19px;font-weight:800;letter-spacing:-.5px}
 .ft .l{font-size:10.5px;color:#9aa1a1;margin-top:3px;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
 .ft.hot{border-color:#ff0051}.ft.hot .n{color:#ff0051}
-.chartwrap{width:100%;overflow-x:auto}
-svg{display:block;width:100%;height:auto}
-.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;font-size:12.5px;color:#5b626a}
-.legend span{display:inline-flex;align-items:center;gap:7px}.sw{width:14px;height:4px;border-radius:2px}
+.src{font-size:11.5px;color:#aab0b6;margin-top:8px}
+/* range */
+.bighead{display:flex;gap:30px;flex-wrap:wrap;margin-bottom:18px}
+.bighead .b{}
+.bighead .b .v{font-size:26px;font-weight:800;letter-spacing:-.6px}
+.bighead .b .v.hot{color:#ff0051}
+.bighead .b .c{font-size:11.5px;color:#9aa1a1;text-transform:uppercase;letter-spacing:.05em;font-weight:600;margin-top:2px}
 table{width:100%;border-collapse:collapse;font-size:13.2px}
-th,td{text-align:left;padding:9px 11px;border-bottom:1px solid #eef0f2}
+th,td{text-align:left;padding:10px 11px;border-bottom:1px solid #eef0f2;vertical-align:middle}
 th{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#9aa1a1;font-weight:700}
 td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
+.bar{height:11px;border-radius:6px;background:#ff0051;opacity:.85;min-width:3px}
+.barwrap{background:#f4f0f2;border-radius:6px;width:160px;overflow:hidden}
+.chartwrap{width:100%;overflow-x:auto}svg{display:block;width:100%;height:auto}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:8px;font-size:12.5px;color:#5b626a}
+.legend span{display:inline-flex;align-items:center;gap:7px}.sw{width:14px;height:4px;border-radius:2px}
 .phases{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .ph{border:1px solid #eceef0;border-radius:13px;padding:15px 15px}
 .ph .d{font-size:11px;letter-spacing:.05em;text-transform:uppercase;font-weight:700;color:#9aa1a1}
@@ -49,71 +58,86 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
 .ph.peak{border-color:#ff0051;border-width:1.5px}.ph.peak h3{color:#ff0051}
 .callout{background:#fff7f9;border:1px solid #ffd6e2;border-radius:12px;padding:15px 18px;font-size:13.8px;color:#5b626a;line-height:1.6}.callout b{color:#1f2323}
 .note{font-size:13.6px;color:#5b626a;line-height:1.66}.note b{color:#1f2323}
-.src{font-size:11.5px;color:#aab0b6;margin-top:8px}
-@media(max-width:900px){.phases{grid-template-columns:1fr 1fr}.funnel{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:900px){.phases{grid-template-columns:1fr 1fr}.funnel{grid-template-columns:repeat(3,1fr)}.barwrap{width:90px}}
 </style>
 </head>
 <body>
 <div class="shell">
 
   <div class="dhead">
-    <div class="tag">AFA × World Card · goal calculator + influence plan · 25 Jun 2026</div>
-    <h1>Set a goal — the whole plan recomputes</h1>
-    <p>Built on the real SG + MY pilot. Pick what you're solving for, budget, sign-up starts, or impressions, and every number on this page (funnel, the per-game budget ladder, the scenario spend) re-derives from it. The influence shape stays; the money flexes to your goal.</p>
+    <div class="tag">AFA × World Card · baseline + spending range · 25 Jun 2026</div>
+    <h1>Commit a floor, see the ceiling</h1>
+    <p>Set the <b>baseline</b> — what you'll spend if Argentina go out in the Round of 32 (your worst case, fully committed). Every deeper result then escalates that by a fixed multiple, so you're locking a floor with a visible, odds-weighted ceiling. All maths off the real SG + MY pilot.</p>
   </div>
 
   <!-- CALCULATOR -->
   <div class="card calc">
-    <h2 class="k">Goal calculator</h2>
-    <p class="sub">Engine = SG + MY pilot: US$428 spend → 385k impressions → 1,596 landing visits → 8 sign-up starts → 3 completed. Set one goal; the rest follow.</p>
+    <h2 class="k">Baseline calculator</h2>
+    <p class="sub">Engine = SG + MY pilot: US$428 → 385k impressions → 1,596 landing visits → 8 sign-up starts → 3 completed. Set the baseline (R32-exit floor) by budget, sign-ups, or impressions.</p>
     <div class="modes" id="modes">
-      <button data-mode="budget" class="on">Set budget</button>
-      <button data-mode="signups">Set sign-up starts</button>
-      <button data-mode="impr">Set impressions</button>
+      <button data-mode="budget" class="on">Set baseline budget</button>
+      <button data-mode="signups">By baseline sign-ups</button>
+      <button data-mode="impr">By baseline impressions</button>
     </div>
     <div class="inrow">
-      <label id="goalLabel">Round budget (US$)</label>
-      <input id="goalInput" type="number" value="2000" min="0" step="50">
+      <label id="goalLabel">Baseline budget — if out in R32 (US$)</label>
+      <input id="goalInput" type="number" value="400" min="0" step="50">
     </div>
     <div class="upl">
       <label>Conversion uplift from router + product creative: <b id="upliftLab">×1.0 (pilot baseline)</b></label>
       <input id="uplift" type="range" min="1" max="3" step="0.1" value="1">
       <span class="hint">Pilot's land→sign-up was throttled by the login wall. The router + product creative should lift it, slide to model 1.5–2×.</span>
     </div>
+    <div class="flmark">Floor — what the baseline buys if Argentina exit in the Round of 32</div>
     <div class="funnel">
       <div class="ft"><div class="n" id="outSpend">—</div><div class="l">Spend</div></div>
       <div class="ft"><div class="n" id="outImpr">—</div><div class="l">Impressions</div></div>
       <div class="ft"><div class="n" id="outClk">—</div><div class="l">Link clicks</div></div>
       <div class="ft"><div class="n" id="outLand">—</div><div class="l">Landing visits</div></div>
       <div class="ft hot"><div class="n" id="outRS">—</div><div class="l">Sign-up starts</div></div>
-      <div class="ft hot"><div class="n" id="outSU">—</div><div class="l">Completed sign-ups</div></div>
+      <div class="ft hot"><div class="n" id="outSU">—</div><div class="l">Completed</div></div>
     </div>
-    <p class="src">Blended cost per sign-up start ≈ US$54 (MY US$32 · SG US$205 — SG runs ~6× pricier). Cost per completed sign-up ≈ US$143. Markets MY · SG · TH · ID.</p>
+    <p class="src">Blended cost per sign-up start ≈ US$54 (MY US$32 · SG US$205, ~6× pricier). Cost per completed ≈ US$143. Markets MY · SG · TH · ID.</p>
   </div>
 
-  <!-- MULTI-PATH INFLUENCE CHART -->
+  <!-- SPENDING RANGE -->
   <div class="card">
-    <h2 class="k">Influence paths + budget (odds-referenced)</h2>
-    <p class="sub">Bold = Argentina keep winning. Faded branches = exit at that round. % = market chance of winning that round. Bars = the goal budget split by influence index.</p>
+    <h2 class="k">Spending range — by how far Argentina go</h2>
+    <p class="sub">Each result = the baseline × a fixed multiple (set by cumulative influence). Spend only accrues through the stage they actually reach. Chance = market odds of that exact outcome.</p>
+    <div class="bighead">
+      <div class="b"><div class="v" id="hFloor">—</div><div class="c">Floor · out R32 (13%)</div></div>
+      <div class="b"><div class="v hot" id="hExp">—</div><div class="c">Expected total (odds-weighted)</div></div>
+      <div class="b"><div class="v" id="hCeil">—</div><div class="c">Ceiling · win it (×6)</div></div>
+    </div>
+    <table>
+      <tr><th>If Argentina…</th><th>Chance</th><th>× baseline</th><th>Total spend</th><th>Range</th><th>Est. sign-up starts</th></tr>
+      <tr><td class="r">Out in R32</td><td>13%</td><td>1.0×</td><td id="os0">—</td><td><div class="barwrap"><div class="bar" id="ob0"></div></div></td><td id="or0">—</td></tr>
+      <tr><td class="r">Out in R16</td><td>20%</td><td>1.7×</td><td id="os1">—</td><td><div class="barwrap"><div class="bar" id="ob1"></div></div></td><td id="or1">—</td></tr>
+      <tr><td class="r">Out in quarter</td><td>22%</td><td>2.6×</td><td id="os2">—</td><td><div class="barwrap"><div class="bar" id="ob2"></div></div></td><td id="or2">—</td></tr>
+      <tr><td class="r">Out in semi</td><td>18%</td><td>3.7×</td><td id="os3">—</td><td><div class="barwrap"><div class="bar" id="ob3"></div></div></td><td id="or3">—</td></tr>
+      <tr><td class="r hot">Reach the final</td><td>12%</td><td>5.0×</td><td id="os4">—</td><td><div class="barwrap"><div class="bar" id="ob4"></div></div></td><td id="or4">—</td></tr>
+      <tr><td class="r hot">WIN it (+ harvest)</td><td>15%</td><td>6.0×</td><td id="os5">—</td><td><div class="barwrap"><div class="bar" id="ob5"></div></div></td><td id="or5">—</td></tr>
+    </table>
+    <div class="callout" style="margin-top:16px"><b>How to read it:</b> you only commit the floor. Realistically (odds-weighted) you'll spend about <b id="cExp">—</b>, but it can range from the floor (if they crash out early) up to ~6× (champions). Pre-approve the whole range; you only actually pay for the rounds they reach.</div>
+  </div>
+
+  <!-- INFLUENCE CHART -->
+  <div class="card">
+    <h2 class="k">Influence climb + per-game budget</h2>
+    <p class="sub">Bold = Argentina keep winning. % = market chance to win that round. Bars = the per-game budget unlocked (= baseline × that game's influence share).</p>
     <div class="chartwrap">
     <svg viewBox="0 0 1000 540" xmlns="http://www.w3.org/2000/svg">
       <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff0051" stop-opacity="0.18"/><stop offset="100%" stop-color="#ff0051" stop-opacity="0"/></linearGradient></defs>
       <line x1="60" y1="330" x2="950" y2="330" stroke="#e6e8eb"/><line x1="60" y1="230" x2="950" y2="230" stroke="#f2f3f5"/><line x1="60" y1="130" x2="950" y2="130" stroke="#f2f3f5"/>
       <text x="52" y="334" text-anchor="end" font-size="10" fill="#aab0b6">low</text><text x="52" y="134" text-anchor="end" font-size="10" fill="#aab0b6">peak</text>
-      <text x="20" y="200" text-anchor="middle" font-size="10" fill="#9aa1a1" transform="rotate(-90 20 200)">influence index</text>
-      <g stroke="#c4c9ce" stroke-width="1.6" stroke-dasharray="4,4" fill="none"><path d="M235,213 L300,316"/><path d="M375,179 L440,316"/><path d="M515,143 L580,316"/><path d="M655,101 L720,314"/><path d="M795,70 L860,300"/></g>
+      <g stroke="#c4c9ce" stroke-width="1.6" stroke-dasharray="4,4" fill="none"><path d="M235,213 L300,316"/><path d="M375,179 L440,316"/><path d="M515,143 L580,316"/><path d="M655,101 L720,314"/></g>
       <g font-size="9.5" fill="#aab0b6"><text x="305" y="328">out → fades</text><text x="445" y="328">out → fades</text><text x="585" y="328">out → fades</text><text x="725" y="326">out → fades</text></g>
       <polygon fill="url(#fill)" points="95,239 235,213 375,179 515,143 655,101 795,70 850,150 905,235 905,330 95,330"/>
       <polyline fill="none" stroke="#ff0051" stroke-width="3" points="95,239 235,213 375,179 515,143 655,101 795,70"/>
       <polyline fill="none" stroke="#ff0051" stroke-width="2" stroke-dasharray="2,3" points="795,70 850,150 905,235"/>
       <g font-size="11" font-weight="700" fill="#ff0051"><text x="165" y="218">87%</text><text x="305" y="184">77%</text><text x="445" y="148">67%</text><text x="585" y="106">60%</text><text x="735" y="52">55%</text></g>
       <g font-size="11.5" font-weight="700" fill="#1f2323" text-anchor="middle">
-        <circle cx="95" cy="239" r="4" fill="#1f2323"/><text x="95" y="227">35</text>
-        <circle cx="235" cy="213" r="4" fill="#1f2323"/><text x="235" y="201">45</text>
-        <circle cx="375" cy="179" r="4" fill="#1f2323"/><text x="375" y="167">58</text>
-        <circle cx="515" cy="143" r="4" fill="#1f2323"/><text x="515" y="131">72</text>
-        <circle cx="655" cy="101" r="4" fill="#1f2323"/><text x="655" y="89">88</text>
-        <circle cx="795" cy="70" r="7" fill="#ff0051"/><text x="795" y="52" fill="#ff0051" font-size="13">100</text>
+        <circle cx="95" cy="239" r="4" fill="#1f2323"/><circle cx="235" cy="213" r="4" fill="#1f2323"/><circle cx="375" cy="179" r="4" fill="#1f2323"/><circle cx="515" cy="143" r="4" fill="#1f2323"/><circle cx="655" cy="101" r="4" fill="#1f2323"/><circle cx="795" cy="70" r="7" fill="#ff0051"/>
       </g>
       <text x="795" y="36" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ff0051">LAST DANCE</text>
       <g font-size="10.5" fill="#69727d" text-anchor="middle">
@@ -124,7 +148,7 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
         <text x="655" y="350">Semi</text><text x="655" y="362" font-size="9" fill="#9aa1a1">Jul 14-15</text>
         <text x="795" y="350" font-weight="700" fill="#ff0051">FINAL</text><text x="795" y="362" font-size="9" fill="#ff0051">Jul 19</text>
       </g>
-      <text x="60" y="400" font-size="10.5" font-weight="700" fill="#9aa1a1">BUDGET (your goal, split by influence)</text>
+      <text x="60" y="400" font-size="10.5" font-weight="700" fill="#9aa1a1">PER-GAME BUDGET UNLOCK</text>
       <rect x="72" y="438" width="46" height="42" rx="3" fill="#ff0051" opacity="0.30"/><text id="bar0" x="95" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
       <rect x="212" y="426" width="46" height="54" rx="3" fill="#ff0051" opacity="0.42"/><text id="bar1" x="235" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
       <rect x="352" y="410" width="46" height="70" rx="3" fill="#ff0051" opacity="0.55"/><text id="bar2" x="375" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
@@ -137,41 +161,9 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
     <div class="legend">
       <span><span class="sw" style="background:#ff0051"></span>Argentina advance</span>
       <span><span class="sw" style="background:#c4c9ce"></span>Exit branch (fades)</span>
-      <span><span class="sw" style="background:#ff0051;opacity:.4"></span>Budget per stage</span>
       <span class="rose">% = market chance to win that round</span>
     </div>
-    <p class="src">Odds back-solved from Polymarket: Argentina ≈15% to win (2nd favourite, France ≈19%). Influence index = round attention × Argentina's draw × last-dance multiplier.</p>
-  </div>
-
-  <!-- BUDGET TABLE -->
-  <div class="card">
-    <h2 class="k">Per-game: odds → influence → budget</h2>
-    <p class="sub">Your goal budget, distributed by influence index and unlocked per game as Argentina advance.</p>
-    <table>
-      <tr><th>Stage</th><th>Date</th><th>Win-round odds</th><th>Cum. reach</th><th>Influence idx</th><th>Budget</th></tr>
-      <tr><td class="r">Group finale ✓</td><td>Jun 27</td><td>through</td><td>100%</td><td>35</td><td id="lad0">—</td></tr>
-      <tr><td class="r">Round of 32</td><td>~Jun 30</td><td>87%</td><td>87%</td><td>45</td><td id="lad1">—</td></tr>
-      <tr><td class="r">Round of 16</td><td>Jul 5-7</td><td>77%</td><td>67%</td><td>58</td><td id="lad2">—</td></tr>
-      <tr><td class="r hot">Quarter-final</td><td>Jul 9-11</td><td>67%</td><td>45%</td><td>72</td><td id="lad3">—</td></tr>
-      <tr><td class="r hot">Semi-final</td><td>Jul 14-15</td><td>60%</td><td>27%</td><td>88</td><td id="lad4">—</td></tr>
-      <tr><td class="r hot">FINAL — last dance</td><td>Jul 19</td><td>55% (win)</td><td>15%</td><td>100</td><td id="lad5" class="hot">—</td></tr>
-    </table>
-  </div>
-
-  <!-- SCENARIO PATHS -->
-  <div class="card">
-    <h2 class="k">The influence paths → total spend</h2>
-    <p class="sub">How far they go = total influence captured = the spend that path justifies. Spend only accrues through the stage they reach.</p>
-    <table>
-      <tr><th>If Argentina…</th><th>Market chance</th><th>Path influence</th><th>Total spend</th></tr>
-      <tr><td class="r">Out in R32</td><td>~13%</td><td>20</td><td id="scen0">—</td></tr>
-      <tr><td class="r">Out in R16</td><td>~22%</td><td>35</td><td id="scen1">—</td></tr>
-      <tr><td class="r">Reach quarter</td><td>~18%</td><td>53</td><td id="scen2">—</td></tr>
-      <tr><td class="r">Reach semi</td><td>~12%</td><td>75</td><td id="scen3">—</td></tr>
-      <tr><td class="r hot">Reach the FINAL</td><td>~27% to reach</td><td>100</td><td id="scen4">—</td></tr>
-      <tr><td class="r hot">WIN it (+ harvest)</td><td>~15%</td><td>120</td><td id="scen5">—</td></tr>
-    </table>
-    <div class="callout" style="margin-top:16px"><b>The override:</b> the final is a guaranteed huge burst even in the "reach final, lose" path — very likely the captain's last World Cup match. The odds govern the climb; the last dance is non-negotiable.</div>
+    <p class="src">Odds referenced from Polymarket: Argentina ≈15% to win (2nd favourite). Influence index = round attention × Argentina's draw × last-dance multiplier.</p>
   </div>
 
   <!-- PHASES -->
@@ -188,45 +180,53 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
   <!-- CAVEAT -->
   <div class="card">
     <h2 class="k">How to run it live</h2>
-    <p class="note"><b>Pre-approve every tranche now</b> so we scale within hours of a result, not days. Budget tracks the bold path while Argentina win; the moment they exit, unlocking stops and the base flips to conversion harvest. Re-read the odds after each round. Either way, <b>move now</b> — the warm-up reach before the knockouts won't come back.</p>
+    <p class="note"><b>Pre-approve the whole range now</b> so we scale within hours of a result, not days, but you only ever pay for the rounds they reach. Budget tracks the bold path while Argentina win; the moment they exit, unlocking stops at that row and the spend-to-date flips to conversion harvest. The final's burst is non-negotiable even in a losing final, it's very likely the captain's last World Cup match.</p>
   </div>
 
 </div>
 
 <script>
 (function(){
-  // per-dollar rates from the SG+MY pilot
   var imprPerD=899.0, clkPerD=10.90, landPerD=3.726, rsPerD=0.018676, suPerD=0.007004;
-  var INFL=[35,45,58,72,88,100], SUM=398;
-  var SCEN=[0.201,0.347,0.528,0.749,1.0,1.2]; // cumulative spend fraction per path
-  var mode='budget', curT=2000;
+  // outcome multiple of baseline (baseline = through R32 = 1.0); cumulative influence / 80
+  var OUT=[1.0, 1.725, 2.625, 3.725, 4.975, 5.97];
+  var PROB=[0.13,0.20,0.22,0.18,0.12,0.15];
+  var STAGE=[35,45,58,72,88,100]; // per-game influence; baseline(group+R32)=80
+  var EXPMULT=0; for(var i=0;i<6;i++) EXPMULT+=PROB[i]*OUT[i]; // ≈3.22
+  var mode='budget', curB=400;
   var modes=document.getElementById('modes'), inp=document.getElementById('goalInput'),
       lab=document.getElementById('goalLabel'), upl=document.getElementById('uplift'), uplLab=document.getElementById('upliftLab');
   function fmt(n){ n=Math.round(n); return n.toLocaleString('en-US'); }
   function usd(n){ return 'US$'+fmt(n); }
   function set(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
   function recompute(){
-    var up=parseFloat(upl.value)||1, v=parseFloat(inp.value)||0, T;
-    if(mode==='budget') T=v;
-    else if(mode==='signups') T = up>0 ? v/(rsPerD*up) : 0;
-    else T = v/imprPerD;
-    curT=T;
+    var up=parseFloat(upl.value)||1, v=parseFloat(inp.value)||0, B;
+    if(mode==='budget') B=v;
+    else if(mode==='signups') B = up>0 ? v/(rsPerD*up) : 0;   // baseline sign-up starts
+    else B = v/imprPerD;                                       // baseline impressions
+    curB=B;
     uplLab.textContent='×'+up.toFixed(1)+(up===1?' (pilot baseline)':'');
-    set('outSpend', usd(T));
-    set('outImpr', fmt(T*imprPerD));
-    set('outClk', fmt(T*clkPerD));
-    set('outLand', fmt(T*landPerD));
-    set('outRS', fmt(T*rsPerD*up));
-    set('outSU', fmt(T*suPerD*up));
-    for(var i=0;i<6;i++){ set('lad'+i, usd(T*INFL[i]/SUM)); set('bar'+i, '$'+fmt(T*INFL[i]/SUM)); set('scen'+i, '~'+usd(T*SCEN[i])); }
+    // floor funnel (the baseline outcome)
+    set('outSpend', usd(B)); set('outImpr', fmt(B*imprPerD)); set('outClk', fmt(B*clkPerD));
+    set('outLand', fmt(B*landPerD)); set('outRS', fmt(B*rsPerD*up)); set('outSU', fmt(B*suPerD*up));
+    // headline floor / expected / ceiling
+    set('hFloor', usd(B)); set('hExp', usd(B*EXPMULT)); set('hCeil', usd(B*OUT[5])); set('cExp', usd(B*EXPMULT));
+    // range rows
+    for(var i=0;i<6;i++){
+      var spend=B*OUT[i];
+      set('os'+i, usd(spend)); set('or'+i, fmt(spend*rsPerD*up));
+      var bar=document.getElementById('ob'+i); if(bar) bar.style.width=(OUT[i]/OUT[5]*100).toFixed(1)+'%';
+    }
+    // chart per-game bars = baseline × stage influence / 80
+    for(var j=0;j<6;j++) set('bar'+j, '$'+fmt(B*STAGE[j]/80));
   }
   modes.addEventListener('click',function(e){
     var b=e.target.closest('button'); if(!b) return;
     [].forEach.call(modes.children,function(x){x.classList.remove('on')}); b.classList.add('on');
     mode=b.dataset.mode; var up=parseFloat(upl.value)||1;
-    if(mode==='budget'){ lab.textContent='Round budget (US$)'; inp.value=Math.round(curT); inp.step=50; }
-    else if(mode==='signups'){ lab.textContent='Target sign-up starts'; inp.value=Math.round(curT*rsPerD*up); inp.step=1; }
-    else { lab.textContent='Target impressions'; inp.value=Math.round(curT*imprPerD); inp.step=10000; }
+    if(mode==='budget'){ lab.textContent='Baseline budget — if out in R32 (US$)'; inp.value=Math.round(curB); inp.step=50; }
+    else if(mode==='signups'){ lab.textContent='Baseline sign-up starts (R32 floor)'; inp.value=Math.round(curB*rsPerD*up); inp.step=1; }
+    else { lab.textContent='Baseline impressions (R32 floor)'; inp.value=Math.round(curB*imprPerD); inp.step=10000; }
     recompute();
   });
   inp.addEventListener('input',recompute);
