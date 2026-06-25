@@ -4,32 +4,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
-<title>AFA × World Card — Days-of-Impact Budget</title>
+<title>AFA × World Card — Paid Media Plan</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Poppins',sans-serif;background:#f4f5f6;color:#1f2323;-webkit-font-smoothing:antialiased;padding:34px 18px 80px}
-.shell{max-width:1080px;margin:0 auto}
-.rose{color:#ff0051}
-.dhead{margin:4px 4px 22px}
+body{font-family:'Poppins',sans-serif;background:#f4f5f6;color:#1f2323;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{display:flex;max-width:1280px;margin:0 auto;gap:0}
+/* sidebar */
+.side{width:248px;flex:none;position:sticky;top:0;height:100vh;padding:34px 22px;border-right:1px solid #e7e9eb;background:#fff;overflow-y:auto}
+.brand{font-weight:800;font-size:17px;letter-spacing:-.3px;line-height:1.25;margin-bottom:4px}
+.brand span{color:#ff0051}
+.brandsub{font-size:11px;color:#9aa1a1;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin-bottom:24px}
+.side nav a{display:block;font-size:13px;color:#69727d;padding:7px 10px;border-radius:8px;margin-bottom:2px;font-weight:500;border-left:2px solid transparent}
+.side nav a .nn{color:#c0c5ca;font-weight:700;margin-right:8px;font-size:11px}
+.side nav a:hover{background:#f7f5f7;color:#1f2323}
+.side nav a.active{background:#fff0f4;color:#ff0051;border-left-color:#ff0051;font-weight:600}
+.side nav a.active .nn{color:#ff0051}
+.sidefoot{margin-top:22px;padding-top:16px;border-top:1px solid #eef0f2;font-size:11px;color:#aab0b6;line-height:1.6}
+/* main */
+.main{flex:1;min-width:0;padding:40px 44px 90px;max-width:920px}
+.dhead{margin-bottom:10px}
 .dhead .tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ff0051;font-weight:700}
-.dhead h1{font-size:30px;font-weight:800;letter-spacing:-.6px;margin:8px 0 10px}
-.dhead p{font-size:14.5px;color:#5b626a;line-height:1.62;max-width:850px}
-.card{background:#fff;border:1px solid #e7e9eb;border-radius:18px;padding:24px 28px;margin-bottom:22px}
-.card>h2.k{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:#9aa1a1;font-weight:700;margin-bottom:6px}
-.card>p.sub{font-size:13.4px;color:#5b626a;line-height:1.55;margin-bottom:14px}
+.dhead h1{font-size:31px;font-weight:800;letter-spacing:-.7px;margin:8px 0 12px}
+.dhead .lead{font-size:15px;color:#5b626a;line-height:1.62}
+section{padding:30px 0 8px;scroll-margin-top:20px;border-top:1px solid #e7e9eb;margin-top:14px}
+section:first-of-type{border-top:none}
+.snum{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#ff0051;font-weight:700}
+section>h2{font-size:23px;font-weight:700;letter-spacing:-.4px;margin:6px 0 14px}
+p.body{font-size:14px;color:#46505a;line-height:1.66;margin-bottom:12px}
+p.body b{color:#1f2323;font-weight:600}
+ul.body{list-style:none;margin:4px 0 14px}
+ul.body li{font-size:14px;color:#46505a;line-height:1.55;padding:6px 0 6px 18px;position:relative}
+ul.body li::before{content:"";position:absolute;left:0;top:13px;width:6px;height:6px;border-radius:50%;background:#ff0051}
+ul.body li b{color:#1f2323;font-weight:600}
+.card{background:#fff;border:1px solid #e7e9eb;border-radius:16px;padding:22px 24px;margin:8px 0 14px}
+.card>h2.k{font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#9aa1a1;font-weight:700;margin-bottom:6px}
+.card>p.sub{font-size:13.2px;color:#5b626a;line-height:1.55;margin-bottom:14px}
 .calc{border:1.5px solid #ffd6e2;background:linear-gradient(180deg,#fff,#fffafc)}
 .ins{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-end;margin-bottom:14px}
 .inb .t{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#9aa1a1;margin-bottom:7px}
 .inb input{font-family:'Poppins';font-weight:700;padding:9px 12px;border:1.5px solid #e0e3e6;border-radius:10px;color:#1f2323}
-.inb input#rate{font-size:26px;width:150px}
-.inb input#ld{font-size:18px;width:90px}
+.inb input#rate{font-size:26px;width:150px}.inb input#ld{font-size:18px;width:90px}
 .inb .d{font-size:11px;color:#aab0b6;margin-top:6px}
 .upl{margin:8px 0 18px}.upl label{font-size:13px;color:#5b626a}
 .upl input[type=range]{width:300px;display:block;margin:8px 0 4px;accent-color:#ff0051}.upl .hint{font-size:11.5px;color:#aab0b6}
 .bighead{display:flex;gap:28px;flex-wrap:wrap;margin:6px 0 14px}
-.bighead .b .v{font-size:25px;font-weight:800;letter-spacing:-.6px}
-.bighead .b .v.hot{color:#ff0051}
+.bighead .b .v{font-size:24px;font-weight:800;letter-spacing:-.6px}.bighead .b .v.hot{color:#ff0051}
 .bighead .b .s{font-size:12px;color:#69727d;font-weight:600}
 .bighead .b .c{font-size:11px;color:#9aa1a1;text-transform:uppercase;letter-spacing:.04em;font-weight:600;margin-top:2px}
 .daysbar{display:flex;height:34px;border-radius:9px;overflow:hidden;margin:6px 0 4px;font-size:11px;font-weight:700;color:#fff}
@@ -39,199 +60,340 @@ body{font-family:'Poppins',sans-serif;background:#f4f5f6;color:#1f2323;-webkit-f
 .legend2 span{display:inline-flex;align-items:center;gap:6px}.legend2 .sw{width:12px;height:12px;border-radius:3px}
 .flmark{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#9aa1a1;margin:14px 0 8px}
 .funnel{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
-.ft{border:1px solid #eceef0;border-radius:12px;padding:13px 10px;text-align:center;background:#fff}
-.ft .n{font-size:19px;font-weight:800;letter-spacing:-.5px}.ft .l{font-size:10.5px;color:#9aa1a1;margin-top:3px;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
+.ft{border:1px solid #eceef0;border-radius:12px;padding:13px 8px;text-align:center;background:#fff}
+.ft .n{font-size:18px;font-weight:800;letter-spacing:-.5px}.ft .l{font-size:10px;color:#9aa1a1;margin-top:3px;text-transform:uppercase;letter-spacing:.03em;font-weight:600}
 .ft.hot{border-color:#ff0051}.ft.hot .n{color:#ff0051}
 .src{font-size:11.5px;color:#aab0b6;margin-top:8px}
-table{width:100%;border-collapse:collapse;font-size:13.2px}
-th,td{text-align:left;padding:10px 11px;border-bottom:1px solid #eef0f2;vertical-align:middle}
-th{font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#9aa1a1;font-weight:700}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid #eef0f2;vertical-align:middle}
+th{font-size:10px;letter-spacing:.04em;text-transform:uppercase;color:#9aa1a1;font-weight:700}
 td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
-.barwrap{background:#f4f0f2;border-radius:6px;width:140px;overflow:hidden}.bar{height:11px;border-radius:6px;background:#ff0051;opacity:.85;min-width:3px}
+.barwrap{background:#f4f0f2;border-radius:6px;width:120px;overflow:hidden}.bar{height:11px;border-radius:6px;background:#ff0051;opacity:.85;min-width:3px}
 .chartwrap{width:100%;overflow-x:auto}svg{display:block;width:100%;height:auto}
 .legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;font-size:12.5px;color:#5b626a}.legend span{display:inline-flex;align-items:center;gap:7px}.sw{width:14px;height:4px;border-radius:2px}
-.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.ph{border:1px solid #eceef0;border-radius:13px;padding:15px 15px}.ph .d{font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;color:#9aa1a1}
-.ph h3{font-size:15px;font-weight:700;margin:5px 0 7px}.ph p{font-size:12.6px;color:#5b626a;line-height:1.48}.ph.peak{border-color:#ff0051;border-width:1.5px}.ph.peak h3{color:#ff0051}
-.callout{background:#fff7f9;border:1px solid #ffd6e2;border-radius:12px;padding:15px 18px;font-size:13.8px;color:#5b626a;line-height:1.6}.callout b{color:#1f2323}
-.note{font-size:13.6px;color:#5b626a;line-height:1.66}.note b{color:#1f2323}
-#distModes button{border:none;background:#fff;font-family:'Poppins';font-size:12.5px;font-weight:500;padding:8px 15px;cursor:pointer;color:#69727d}#distModes button.on{background:#ff0051;color:#fff;font-weight:600}
-@media(max-width:900px){.phases{grid-template-columns:1fr 1fr}.funnel{grid-template-columns:repeat(3,1fr)}.barwrap{width:80px}}
+.modes,#distModes{display:inline-flex;border:1px solid #e0e3e6;border-radius:999px;overflow:hidden;margin-bottom:12px}
+.modes button,#distModes button{border:none;background:#fff;font-family:'Poppins';font-size:12.5px;font-weight:500;padding:8px 15px;cursor:pointer;color:#69727d}
+.modes button.on,#distModes button.on{background:#ff0051;color:#fff;font-weight:600}
+.phases{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.ph{border:1px solid #eceef0;border-radius:12px;padding:14px 14px}.ph .d{font-size:11px;letter-spacing:.04em;text-transform:uppercase;font-weight:700;color:#9aa1a1}
+.ph h3{font-size:14.5px;font-weight:700;margin:5px 0 6px}.ph p{font-size:12.4px;color:#5b626a;line-height:1.46}.ph.peak{border-color:#ff0051;border-width:1.5px}.ph.peak h3{color:#ff0051}
+.callout{background:#fff7f9;border:1px solid #ffd6e2;border-radius:12px;padding:14px 17px;font-size:13.4px;color:#5b626a;line-height:1.58}.callout b{color:#1f2323}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{border:1px solid #eceef0;border-radius:12px;padding:16px 18px}
+.box h4{font-size:14px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.box .dot{width:9px;height:9px;border-radius:50%}
+.box ul{list-style:none}.box li{font-size:12.8px;color:#5b626a;line-height:1.5;padding:5px 0 5px 15px;position:relative}
+.box li::before{content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:50%;background:#cfd3d7}
+@media(max-width:980px){.side{display:none}.main{padding:30px 20px 70px}.two,.phases,.funnel{grid-template-columns:1fr}.funnel{grid-template-columns:repeat(3,1fr)}}
 </style>
 </head>
 <body>
-<div class="shell">
+<div class="wrap">
+  <aside class="side">
+    <div class="brand">WorldFirst × <span>Argentina</span></div>
+    <div class="brandsub">Paid Media Plan · World Cup 2026</div>
+    <nav id="nav">
+      <a href="#s1"><span class="nn">01</span>Overview &amp; objective</a>
+      <a href="#s2"><span class="nn">02</span>What the pilot taught us</a>
+      <a href="#s3"><span class="nn">03</span>Strategy — two jobs</a>
+      <a href="#s4"><span class="nn">04</span>Timing — the peak</a>
+      <a href="#s5"><span class="nn">05</span>Budget model</a>
+      <a href="#s6"><span class="nn">06</span>Regional split &amp; saturation</a>
+      <a href="#s7"><span class="nn">07</span>Creative</a>
+      <a href="#s8"><span class="nn">08</span>Targeting &amp; audience</a>
+      <a href="#s9"><span class="nn">09</span>Measurement &amp; KPIs</a>
+      <a href="#s10"><span class="nn">10</span>Running it live</a>
+      <a href="#s11"><span class="nn">11</span>Risks &amp; dependencies</a>
+      <a href="#s12"><span class="nn">12</span>Next steps</a>
+    </nav>
+    <div class="sidefoot">Markets: MY · SG · TH · ID · PH<br>VN on its own channel<br>Updated 25 Jun 2026</div>
+  </aside>
 
-  <div class="dhead">
-    <div class="tag">AFA × World Card · days-of-impact budget · 25 Jun 2026</div>
-    <h1>One lever: spend per day. Everything else is days.</h1>
-    <p>The ratio is just <b>days of impact</b>. Argentina are locked as group winners, so their R32 is fixed — <b>July 3, Miami</b>. From today to then is committed. The captain's last match gets a fixed 5-day tail. And every extra day they stay alive is one more opportunistic day. Set the <b>per-day rate</b>; the days do the rest.</p>
-  </div>
+  <main class="main">
+    <div class="dhead">
+      <div class="tag">Paid media plan · for review</div>
+      <h1>Win a signed Argentina jersey — riding the World Cup to World Card sign-ups</h1>
+      <p class="lead">Ride the 2026 World Cup attention peak (Messi, now the all-time top scorer, likely his last) to build brand memory, then harvest World Card sign-ups in the afterglow. Built on real pilot data, with a live budget model you can dial below.</p>
+    </div>
 
-  <!-- CALCULATOR -->
-  <div class="card calc">
-    <h2 class="k">The one number that matters: per-day spend</h2>
-    <p class="sub">Days from real fixtures. Committed = 9 upfront (Jun 25→Jul 3) + your last-dance tail. Opportunistic = every day they survive past R32 (up to Jul 19). Conversions off the SG+MY pilot (US$54 / sign-up start).</p>
-    <div class="ins">
-      <div class="inb"><div class="t">Spend per day (US$)</div><input id="rate" type="number" value="3000" min="0" step="100"><div class="d">Total daily across MY · SG · TH · ID · PH.</div></div>
-      <div class="inb"><div class="t">Last-dance tail (days)</div><input id="ld" type="number" value="5" min="0" step="1"><div class="d">After the captain's final match.</div></div>
-    </div>
-    <div class="upl">
-      <label>Conversion uplift from router + product creative: <b id="upliftLab">×1.0 (pilot baseline)</b></label>
-      <input id="uplift" type="range" min="1" max="3" step="0.1" value="1">
-      <span class="hint">Pilot's land→sign-up was throttled by the login wall; router + product creative should lift it. Slide to model 1.5–2×.</span>
-    </div>
-    <div class="bighead">
-      <div class="b"><div class="v" id="hFloor">—</div><div class="s" id="hFloorD">—</div><div class="c">Committed floor · out R32</div></div>
-      <div class="b"><div class="v hot" id="hExp">—</div><div class="s" id="hExpD">—</div><div class="c">Expected (odds-weighted)</div></div>
-      <div class="b"><div class="v" id="hCeil">—</div><div class="s" id="hCeilD">—</div><div class="c">Ceiling · win it (<span id="hRatio">—</span>)</div></div>
-    </div>
-    <div class="legend2">
-      <span><span class="sw" style="background:#9aa1a1"></span>Upfront (9d, fixed)</span>
-      <span><span class="sw" style="background:#6b7178"></span>Last-dance (fixed)</span>
-      <span><span class="sw" style="background:#ff0051"></span>Opportunistic (per day alive)</span>
-      <span><span class="sw" style="background:#b3003a"></span>Champions tail</span>
-    </div>
-    <div class="daysbar" id="daysbar"></div>
-    <div class="flmark">Expected outcome — what the odds-weighted spend buys</div>
-    <div class="funnel">
-      <div class="ft"><div class="n" id="outSpend">—</div><div class="l">Spend</div></div>
-      <div class="ft"><div class="n" id="outImpr">—</div><div class="l">Impressions</div></div>
-      <div class="ft"><div class="n" id="outClk">—</div><div class="l">Link clicks</div></div>
-      <div class="ft"><div class="n" id="outLand">—</div><div class="l">Landing visits</div></div>
-      <div class="ft hot"><div class="n" id="outRS">—</div><div class="l">Sign-up starts</div></div>
-      <div class="ft hot"><div class="n" id="outSU">—</div><div class="l">Completed</div></div>
-    </div>
-  </div>
+    <!-- 01 -->
+    <section id="s1">
+      <div class="snum">01</div><h2>Overview &amp; objective</h2>
+      <p class="body">WorldFirst is the <b>Official Regional Sponsor of the Argentine national team</b>. The "win a signed Argentina jersey" prize-draw is the hook; the real goal is <b>World Card acquisition and spend</b> across Southeast Asia. This plan times paid against the World Cup so the brand is loud when attention is highest, then converts when intent is warmest.</p>
+      <ul class="body">
+        <li><b>Two objectives, run separately:</b> brand awareness at the World Cup peak, and qualified World Card sign-ups in the weeks after.</li>
+        <li><b>Markets:</b> Malaysia (lead) · Singapore · Thailand · Indonesia · Philippines. Vietnam runs on its own channel.</li>
+        <li><b>Window:</b> now → 17 Aug; prize draw 31 Aug. The World Cup final (19 Jul) is the attention peak.</li>
+        <li><b>Compliance:</b> Messi's visual is AFA-licensed; never named in copy. No "World Cup / FIFA" wording on creative.</li>
+      </ul>
+    </section>
 
-  <!-- REGIONAL SPLIT + SATURATION -->
-  <div class="card">
-    <h2 class="k">Regional split + audience saturation at this daily rate</h2>
-    <p class="sub">Your priority split — <b>MY 50% · SG 25% · TH 10% · ID 10% · PH 5%</b>, weighted to the lead World Card markets. Note this concentrates budget on the <b>smaller</b> audiences, so MY + SG become the saturation risk (see below). Impressions/day and "days to cover once" assume <b>broad</b> targeting.</p>
-    <table>
-      <tr><th>Market</th><th>Daily</th><th>Share</th><th>Broad reach 25-55</th><th>Impr / day</th><th>Days to cover once</th><th>Primary job</th></tr>
-      <tr><td class="r hot">Malaysia</td><td id="rg_d_my">—</td><td>50%</td><td>~15M</td><td id="rg_i_my">—</td><td id="rg_c_my" class="hot">—</td><td>Lead — awareness + convert</td></tr>
-      <tr><td class="r hot">Singapore</td><td id="rg_d_sg">—</td><td>25%</td><td>~3M</td><td id="rg_i_sg">—</td><td id="rg_c_sg" class="hot">—</td><td>Convert (premium, capped)</td></tr>
-      <tr><td class="r">Thailand</td><td id="rg_d_th">—</td><td>10%</td><td>~30M</td><td id="rg_i_th">—</td><td id="rg_c_th">—</td><td>Reach (headroom)</td></tr>
-      <tr><td class="r">Indonesia</td><td id="rg_d_id">—</td><td>10%</td><td>~70M</td><td id="rg_i_id">—</td><td id="rg_c_id">—</td><td>Reach (headroom)</td></tr>
-      <tr><td class="r">Philippines</td><td id="rg_d_ph">—</td><td>5%</td><td>~45M</td><td id="rg_i_ph">—</td><td id="rg_c_ph">—</td><td>Reach (new market)</td></tr>
-    </table>
-    <div class="callout" style="margin-top:16px"><b>Heads-up — this split saturates your two lead markets fastest.</b> 75% on MY + SG concentrates spend where the audience is smallest: even <b>broad</b>, MY covers its whole reachable audience in ~8 days and SG in ~9 (≈3–4× frequency over a full run). Run it <b>narrow</b> and they'd burn out in ~1 day. So broad is mandatory, hold a frequency cap, and <b>pivot MY + SG to conversion/retargeting from ~day 8–10</b> as awareness saturates — which is where their sign-up value is anyway. TH/ID/PH have huge headroom; nudge a few points there if MY/SG run too hot.</div>
-    <p class="note" style="margin-top:14px"><b>How to actually spend US$3,000/day without burning the audience:</b></p>
-    <table style="margin-top:6px">
-      <tr><td class="r" style="width:34%">1 · Go broad</td><td>Geo + age + Advantage+ audience. Drop the narrow interest cage on awareness — it can't absorb the budget and chokes delivery.</td></tr>
-      <tr><td class="r">2 · Relief valve in TH/ID/PH</td><td>If MY/SG frequency runs hot, shift a few points to TH/ID/PH — they have huge headroom.</td></tr>
-      <tr><td class="r">3 · Frequency cap ~2–3/wk</td><td>Broad gives the room to honour a cap, so no one gets hit 15×.</td></tr>
-      <tr><td class="r">4 · Widen placements</td><td>FB Feed + Stories + Reels + IG + Audience Network = more inventory to soak up spend.</td></tr>
-      <tr><td class="r">5 · Rotate all 5 creatives</td><td>At this frequency the 5 designs finally earn their place — they fight wear-out (at low budget 2 was right; at US$3k/day, 5).</td></tr>
-      <tr><td class="r">6 · Saturation = pivot signal</td><td>When a market's reach plateaus and frequency climbs, shift that money awareness → retargeting/conversion. MY + SG trip this around day 8–10.</td></tr>
-    </table>
-  </div>
+    <!-- 02 -->
+    <section id="s2">
+      <div class="snum">02</div><h2>What the pilot taught us</h2>
+      <p class="body">A US$542 pilot (MY/SG/VN, Facebook, optimised for link clicks) gave us the engine for everything below — and two clear warnings.</p>
+      <ul class="body">
+        <li><b>Cheap clicks ≠ customers.</b> Vietnam drove the most, cheapest clicks (US$0.03, 8% CTR) and produced <b>zero sign-ups</b> — the prize pulled football fans, not businesses.</li>
+        <li><b>The converters were MY + SG.</b> All 3 completed sign-ups came from them. Benchmarks (blended): <b>CPM US$1.11, US$54 per sign-up start, US$143 per completed</b>; MY ~6× cheaper than SG.</li>
+        <li><b>The journey leaks.</b> "Get a World Card" dumps new users at a login wall — land→sign-up was just 0.2%. The router fix is queued.</li>
+      </ul>
+      <p class="body">So round two changes three things: <b>optimise for sign-ups, not clicks</b>; <b>split awareness from conversion</b>; and <b>fix the login-wall journey</b>.</p>
+    </section>
 
-  <!-- DISTRIBUTION -->
-  <div class="card">
-    <h2 class="k">Outcome distribution — weighted by chance</h2>
-    <p class="sub">Each column is an outcome. <b>Width = its chance</b>, <b>height = what it produces</b>, so the <b>area = its contribution to the expected</b>. The dashed line is the chance-weighted average (the "expected" figure). Toggle what the height shows.</p>
-    <div class="modes" id="distModes">
-      <button data-m="starts" class="on">Sign-up starts</button>
-      <button data-m="completed">Completed</button>
-      <button data-m="spend">Spend</button>
-    </div>
-    <div class="chartwrap"><svg id="distSvg" viewBox="0 0 1000 350" xmlns="http://www.w3.org/2000/svg"></svg></div>
-  </div>
+    <!-- 03 -->
+    <section id="s3">
+      <div class="snum">03</div><h2>Strategy — two jobs, not one</h2>
+      <p class="body">Payments is a "when-needed" category: at any moment only ~5% are in-market. You can't convert the other 95% today, but you can be the name they remember when the need arrives. So we run two jobs and let the audience flow from one to the other.</p>
+      <div class="two">
+        <div class="box"><h4><span class="dot" style="background:#ff0051"></span>Awareness — the 95%</h4><ul>
+          <li>Messi as the fame device, broad reach</li>
+          <li>Job = build memory, measured on reach + branded search, <b>not</b> sign-ups</li>
+          <li>Runs hot through the knockouts, peaks at the final</li>
+        </ul></div>
+        <div class="box"><h4><span class="dot" style="background:#1f2323"></span>Conversion — the 5%</h4><ul>
+          <li>Product-led, optimised for sign-ups (needs the pixel)</li>
+          <li>Retargets the pool awareness just warmed + seller interests</li>
+          <li>Harvests in the afterglow, through the draw</li>
+        </ul></div>
+      </div>
+      <div class="callout" style="margin-top:8px"><b>The flywheel:</b> cheap broad awareness warms a huge pool → that pool becomes the retargeting audience → conversion harvests it. Build the audience once at peak attention, harvest it for weeks. Post-final, hand that warm audience to the paid/performance team for deeper product conversion (shared via Business Manager).</div>
+    </section>
 
-  <!-- RANGE -->
-  <div class="card">
-    <h2 class="k">Spending range — by days survived</h2>
-    <p class="sub">Each outcome = total days × your per-day rate. Days = 9 upfront + (days alive past R32) + last-dance tail (+ champions tail on a win).</p>
-    <table>
-      <tr><th>If Argentina…</th><th>Chance</th><th>Total days</th><th>Total spend</th><th>× floor</th><th>Range</th><th>Sign-up starts</th></tr>
-      <tr><td class="r">Out in R32 (Jul 3)</td><td>13%</td><td id="od0">—</td><td id="os0">—</td><td id="ox0">—</td><td><div class="barwrap"><div class="bar" id="ob0"></div></div></td><td id="or0">—</td></tr>
-      <tr><td class="r">Out in R16 (~Jul 6)</td><td>20%</td><td id="od1">—</td><td id="os1">—</td><td id="ox1">—</td><td><div class="barwrap"><div class="bar" id="ob1"></div></div></td><td id="or1">—</td></tr>
-      <tr><td class="r">Out in quarter (~Jul 10)</td><td>22%</td><td id="od2">—</td><td id="os2">—</td><td id="ox2">—</td><td><div class="barwrap"><div class="bar" id="ob2"></div></div></td><td id="or2">—</td></tr>
-      <tr><td class="r">Out in semi (~Jul 14)</td><td>18%</td><td id="od3">—</td><td id="os3">—</td><td id="ox3">—</td><td><div class="barwrap"><div class="bar" id="ob3"></div></div></td><td id="or3">—</td></tr>
-      <tr><td class="r hot">Reach the final (Jul 19)</td><td>12%</td><td id="od4">—</td><td id="os4">—</td><td id="ox4">—</td><td><div class="barwrap"><div class="bar" id="ob4"></div></div></td><td id="or4">—</td></tr>
-      <tr><td class="r hot">WIN it</td><td>15%</td><td id="od5">—</td><td id="os5">—</td><td id="ox5">—</td><td><div class="barwrap"><div class="bar" id="ob5"></div></div></td><td id="or5">—</td></tr>
-    </table>
-    <div class="callout" style="margin-top:16px"><b>Read it as:</b> you set <b id="cRate">—</b>/day. You commit the floor (<b id="cFloor">—</b> = <span id="cFloorD">—</span> days); realistically you'll spend <b id="cExp">—</b>; the ceiling is <span id="cCeil">—</span> as champions. You only pay for days they're actually alive, plus the two fixed pillars.</div>
-  </div>
+    <!-- 04 -->
+    <section id="s4">
+      <div class="snum">04</div><h2>Timing — ride the run to the final</h2>
+      <p class="body">We're inside the tournament. Argentina (group winners) play their R32 in <b>Miami on Jul 3</b>; attention climbs through the knockouts and peaks at the <b>final, Jul 19</b> — very likely the captain's last World Cup match. Spend the peak buying memory; spend the weeks after buying sign-ups.</p>
+      <!-- CHART -->
+      <div class="card">
+        <h2 class="k">Influence climb + per-stage budget (days × rate)</h2>
+        <p class="sub">Bold = Argentina keep winning. % = market chance to win that round. Bars = spend at each stage (grey = fixed days, rose = opportunistic; final carries the last-dance tail).</p>
+        <div class="chartwrap">
+        <svg viewBox="0 0 1000 540" xmlns="http://www.w3.org/2000/svg">
+          <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff0051" stop-opacity="0.18"/><stop offset="100%" stop-color="#ff0051" stop-opacity="0"/></linearGradient></defs>
+          <line x1="60" y1="330" x2="950" y2="330" stroke="#e6e8eb"/><line x1="60" y1="230" x2="950" y2="230" stroke="#f2f3f5"/><line x1="60" y1="130" x2="950" y2="130" stroke="#f2f3f5"/>
+          <g stroke="#c4c9ce" stroke-width="1.6" stroke-dasharray="4,4" fill="none"><path d="M235,213 L300,316"/><path d="M375,179 L440,316"/><path d="M515,143 L580,316"/><path d="M655,101 L720,314"/></g>
+          <g font-size="9.5" fill="#aab0b6"><text x="305" y="328">out → fades</text><text x="445" y="328">out → fades</text><text x="585" y="328">out → fades</text><text x="725" y="326">out → fades</text></g>
+          <polygon fill="url(#fill)" points="95,239 235,213 375,179 515,143 655,101 795,70 850,150 905,235 905,330 95,330"/>
+          <polyline fill="none" stroke="#ff0051" stroke-width="3" points="95,239 235,213 375,179 515,143 655,101 795,70"/>
+          <polyline fill="none" stroke="#ff0051" stroke-width="2" stroke-dasharray="2,3" points="795,70 850,150 905,235"/>
+          <g font-size="11" font-weight="700" fill="#ff0051"><text x="165" y="218">87%</text><text x="305" y="184">77%</text><text x="445" y="148">67%</text><text x="585" y="106">60%</text><text x="735" y="52">55%</text></g>
+          <g><circle cx="95" cy="239" r="4" fill="#1f2323"/><circle cx="235" cy="213" r="4" fill="#1f2323"/><circle cx="375" cy="179" r="4" fill="#1f2323"/><circle cx="515" cy="143" r="4" fill="#1f2323"/><circle cx="655" cy="101" r="4" fill="#1f2323"/><circle cx="795" cy="70" r="7" fill="#ff0051"/></g>
+          <text x="795" y="36" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ff0051">LAST DANCE</text>
+          <g font-size="10.5" fill="#69727d" text-anchor="middle">
+            <text x="95" y="350">Group ✓</text><text x="95" y="362" font-size="9" fill="#9aa1a1">Jun 27</text>
+            <text x="235" y="350">R32 · Miami</text><text x="235" y="362" font-size="9" fill="#9aa1a1">Jul 3</text>
+            <text x="375" y="350">R16</text><text x="375" y="362" font-size="9" fill="#9aa1a1">Jul 4-7</text>
+            <text x="515" y="350">Quarter</text><text x="515" y="362" font-size="9" fill="#9aa1a1">Jul 9-11</text>
+            <text x="655" y="350">Semi</text><text x="655" y="362" font-size="9" fill="#9aa1a1">Jul 14-15</text>
+            <text x="795" y="350" font-weight="700" fill="#ff0051">FINAL</text><text x="795" y="362" font-size="9" fill="#ff0051">Jul 19</text>
+          </g>
+          <text x="60" y="400" font-size="10.5" font-weight="700" fill="#9aa1a1">BUDGET AT EACH STAGE (days × rate)</text>
+          <rect x="72" y="446" width="46" height="34" rx="3" fill="#b8bdc2"/><text id="bar0" x="95" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
+          <rect x="212" y="452" width="46" height="28" rx="3" fill="#b8bdc2"/><text id="bar1" x="235" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
+          <rect x="352" y="452" width="46" height="28" rx="3" fill="#ff0051" opacity="0.5"/><text id="bar2" x="375" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
+          <rect x="492" y="442" width="46" height="38" rx="3" fill="#ff0051" opacity="0.65"/><text id="bar3" x="515" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
+          <rect x="632" y="442" width="46" height="38" rx="3" fill="#ff0051" opacity="0.8"/><text id="bar4" x="655" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
+          <rect x="772" y="392" width="46" height="88" rx="3" fill="#ff0051"/><text id="bar5" x="795" y="495" text-anchor="middle" font-size="10.5" fill="#ff0051" font-weight="700">—</text>
+          <text x="795" y="514" text-anchor="middle" font-size="9" fill="#ff0051" font-weight="700">+ last-dance tail</text>
+        </svg>
+        </div>
+        <div class="legend"><span><span class="sw" style="background:#b8bdc2"></span>Fixed days</span><span><span class="sw" style="background:#ff0051"></span>Opportunistic days</span><span class="rose">% = chance to win that round</span></div>
+        <p class="src">R32 confirmed: Argentina vs Group H runner-up, Jul 3, Miami. Odds ref Polymarket (Argentina ≈15% to win). Later-round dates within official windows; refresh as the bracket resolves.</p>
+      </div>
+      <div class="phases">
+        <div class="ph"><div class="d">Jun 25 → Jul 3</div><h3>Upfront (fixed)</h3><p>9 committed days. Ride Messi's all-time-scorer moment, all markets.</p></div>
+        <div class="ph"><div class="d">Jul 4 → Jul 7</div><h3>Opportunistic begins</h3><p>R16. Every day alive = one more day of spend. Build the retargeting pool.</p></div>
+        <div class="ph peak"><div class="d">Jul 9 → Jul 19</div><h3>Peak days</h3><p>QF → SF → Final, plus the fixed last-dance tail on the captain's final match.</p></div>
+        <div class="ph"><div class="d">Jul 20 → Aug 17</div><h3>Harvest</h3><p>Afterglow. Flip to conversion, retarget the warmed pool. Draw Aug 31.</p></div>
+      </div>
+    </section>
 
-  <!-- CHART -->
-  <div class="card">
-    <h2 class="k">Influence climb + per-stage budget (days × rate)</h2>
-    <p class="sub">Bold = Argentina keep winning. % = market chance to win that round. Bars = spend at each stage = the days in it × your rate (grey = fixed, rose = opportunistic, final carries the last-dance tail).</p>
-    <div class="chartwrap">
-    <svg viewBox="0 0 1000 540" xmlns="http://www.w3.org/2000/svg">
-      <defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ff0051" stop-opacity="0.18"/><stop offset="100%" stop-color="#ff0051" stop-opacity="0"/></linearGradient></defs>
-      <line x1="60" y1="330" x2="950" y2="330" stroke="#e6e8eb"/><line x1="60" y1="230" x2="950" y2="230" stroke="#f2f3f5"/><line x1="60" y1="130" x2="950" y2="130" stroke="#f2f3f5"/>
-      <g stroke="#c4c9ce" stroke-width="1.6" stroke-dasharray="4,4" fill="none"><path d="M235,213 L300,316"/><path d="M375,179 L440,316"/><path d="M515,143 L580,316"/><path d="M655,101 L720,314"/></g>
-      <g font-size="9.5" fill="#aab0b6"><text x="305" y="328">out → fades</text><text x="445" y="328">out → fades</text><text x="585" y="328">out → fades</text><text x="725" y="326">out → fades</text></g>
-      <polygon fill="url(#fill)" points="95,239 235,213 375,179 515,143 655,101 795,70 850,150 905,235 905,330 95,330"/>
-      <polyline fill="none" stroke="#ff0051" stroke-width="3" points="95,239 235,213 375,179 515,143 655,101 795,70"/>
-      <polyline fill="none" stroke="#ff0051" stroke-width="2" stroke-dasharray="2,3" points="795,70 850,150 905,235"/>
-      <g font-size="11" font-weight="700" fill="#ff0051"><text x="165" y="218">87%</text><text x="305" y="184">77%</text><text x="445" y="148">67%</text><text x="585" y="106">60%</text><text x="735" y="52">55%</text></g>
-      <g><circle cx="95" cy="239" r="4" fill="#1f2323"/><circle cx="235" cy="213" r="4" fill="#1f2323"/><circle cx="375" cy="179" r="4" fill="#1f2323"/><circle cx="515" cy="143" r="4" fill="#1f2323"/><circle cx="655" cy="101" r="4" fill="#1f2323"/><circle cx="795" cy="70" r="7" fill="#ff0051"/></g>
-      <text x="795" y="36" text-anchor="middle" font-size="9.5" font-weight="700" fill="#ff0051">LAST DANCE</text>
-      <g font-size="10.5" fill="#69727d" text-anchor="middle">
-        <text x="95" y="350">Group ✓</text><text x="95" y="362" font-size="9" fill="#9aa1a1">Jun 27</text>
-        <text x="235" y="350">R32 · Miami</text><text x="235" y="362" font-size="9" fill="#9aa1a1">Jul 3</text>
-        <text x="375" y="350">R16</text><text x="375" y="362" font-size="9" fill="#9aa1a1">Jul 4-7</text>
-        <text x="515" y="350">Quarter</text><text x="515" y="362" font-size="9" fill="#9aa1a1">Jul 9-11</text>
-        <text x="655" y="350">Semi</text><text x="655" y="362" font-size="9" fill="#9aa1a1">Jul 14-15</text>
-        <text x="795" y="350" font-weight="700" fill="#ff0051">FINAL</text><text x="795" y="362" font-size="9" fill="#ff0051">Jul 19</text>
-      </g>
-      <text x="60" y="400" font-size="10.5" font-weight="700" fill="#9aa1a1">BUDGET AT EACH STAGE (days × rate)</text>
-      <rect x="72" y="446" width="46" height="34" rx="3" fill="#b8bdc2"/><text id="bar0" x="95" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
-      <rect x="212" y="452" width="46" height="28" rx="3" fill="#b8bdc2"/><text id="bar1" x="235" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
-      <rect x="352" y="452" width="46" height="28" rx="3" fill="#ff0051" opacity="0.5"/><text id="bar2" x="375" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
-      <rect x="492" y="442" width="46" height="38" rx="3" fill="#ff0051" opacity="0.65"/><text id="bar3" x="515" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
-      <rect x="632" y="442" width="46" height="38" rx="3" fill="#ff0051" opacity="0.8"/><text id="bar4" x="655" y="495" text-anchor="middle" font-size="10" fill="#69727d">—</text>
-      <rect x="772" y="392" width="46" height="88" rx="3" fill="#ff0051"/><text id="bar5" x="795" y="495" text-anchor="middle" font-size="10.5" fill="#ff0051" font-weight="700">—</text>
-      <text x="795" y="514" text-anchor="middle" font-size="9" fill="#ff0051" font-weight="700">+ last-dance tail</text>
-    </svg>
-    </div>
-    <div class="legend">
-      <span><span class="sw" style="background:#b8bdc2"></span>Fixed days (committed)</span>
-      <span><span class="sw" style="background:#ff0051"></span>Opportunistic days</span>
-      <span class="rose">% = market chance to win that round</span>
-    </div>
-    <p class="src">R32 confirmed: Argentina (group J winners) vs Group H runner-up, Jul 3, Miami. Odds ref Polymarket (Argentina ≈15% to win). Later-round dates within official windows; refresh as the bracket resolves.</p>
-  </div>
+    <!-- 05 -->
+    <section id="s5">
+      <div class="snum">05</div><h2>Budget model — one lever: spend per day</h2>
+      <p class="body">The unit is <b>days of impact</b>. Argentina's R32 is fixed (Jul 3), so the run-up is committed; the captain's last match gets a fixed 5-day tail; every extra day they stay alive is one more opportunistic day. Set the <b>per-day rate</b> and everything re-derives. Conversions use the SG+MY pilot (US$54 per sign-up start).</p>
+      <!-- CALCULATOR -->
+      <div class="card calc">
+        <h2 class="k">The one number that matters: per-day spend</h2>
+        <p class="sub">Committed = 9 upfront days (Jun 25→Jul 3) + your last-dance tail. Opportunistic = every day they survive past R32 (up to Jul 19).</p>
+        <div class="ins">
+          <div class="inb"><div class="t">Spend per day (US$)</div><input id="rate" type="number" value="3000" min="0" step="100"><div class="d">Total daily across MY · SG · TH · ID · PH.</div></div>
+          <div class="inb"><div class="t">Last-dance tail (days)</div><input id="ld" type="number" value="5" min="0" step="1"><div class="d">After the captain's final match.</div></div>
+        </div>
+        <div class="upl">
+          <label>Conversion uplift from router + product creative: <b id="upliftLab">×1.0 (pilot baseline)</b></label>
+          <input id="uplift" type="range" min="1" max="3" step="0.1" value="1">
+          <span class="hint">Pilot's land→sign-up was throttled by the login wall; router + product creative should lift it. Slide to model 1.5–2×.</span>
+        </div>
+        <div class="bighead">
+          <div class="b"><div class="v" id="hFloor">—</div><div class="s" id="hFloorD">—</div><div class="c">Committed floor · out R32</div></div>
+          <div class="b"><div class="v hot" id="hExp">—</div><div class="s" id="hExpD">—</div><div class="c">Expected (odds-weighted)</div></div>
+          <div class="b"><div class="v" id="hCeil">—</div><div class="s" id="hCeilD">—</div><div class="c">Ceiling · win it (<span id="hRatio">—</span>)</div></div>
+        </div>
+        <div class="legend2">
+          <span><span class="sw" style="background:#9aa1a1"></span>Upfront (9d, fixed)</span>
+          <span><span class="sw" style="background:#6b7178"></span>Last-dance (fixed)</span>
+          <span><span class="sw" style="background:#ff0051"></span>Opportunistic (per day alive)</span>
+          <span><span class="sw" style="background:#b3003a"></span>Champions tail</span>
+        </div>
+        <div class="daysbar" id="daysbar"></div>
+        <div class="flmark">Expected outcome — what the odds-weighted spend buys</div>
+        <div class="funnel">
+          <div class="ft"><div class="n" id="outSpend">—</div><div class="l">Spend</div></div>
+          <div class="ft"><div class="n" id="outImpr">—</div><div class="l">Impressions</div></div>
+          <div class="ft"><div class="n" id="outClk">—</div><div class="l">Link clicks</div></div>
+          <div class="ft"><div class="n" id="outLand">—</div><div class="l">Landing visits</div></div>
+          <div class="ft hot"><div class="n" id="outRS">—</div><div class="l">Sign-up starts</div></div>
+          <div class="ft hot"><div class="n" id="outSU">—</div><div class="l">Completed</div></div>
+        </div>
+      </div>
+      <!-- DISTRIBUTION -->
+      <div class="card">
+        <h2 class="k">Outcome distribution — weighted by chance</h2>
+        <p class="sub"><b>Width = chance</b>, <b>height = what it produces</b>, so <b>area = contribution to the expected</b>. Dashed line = the chance-weighted average. Toggle the height.</p>
+        <div id="distModes">
+          <button data-m="starts" class="on">Sign-up starts</button>
+          <button data-m="completed">Completed</button>
+          <button data-m="spend">Spend</button>
+        </div>
+        <div class="chartwrap"><svg id="distSvg" viewBox="0 0 1000 350" xmlns="http://www.w3.org/2000/svg"></svg></div>
+      </div>
+      <!-- RANGE -->
+      <div class="card">
+        <h2 class="k">Spending range — by days survived</h2>
+        <table>
+          <tr><th>If Argentina…</th><th>Chance</th><th>Days</th><th>Total spend</th><th>× floor</th><th>Range</th><th>Sign-up starts</th></tr>
+          <tr><td class="r">Out R32 (Jul 3)</td><td>13%</td><td id="od0">—</td><td id="os0">—</td><td id="ox0">—</td><td><div class="barwrap"><div class="bar" id="ob0"></div></div></td><td id="or0">—</td></tr>
+          <tr><td class="r">Out R16 (~Jul 6)</td><td>20%</td><td id="od1">—</td><td id="os1">—</td><td id="ox1">—</td><td><div class="barwrap"><div class="bar" id="ob1"></div></div></td><td id="or1">—</td></tr>
+          <tr><td class="r">Out quarter (~Jul 10)</td><td>22%</td><td id="od2">—</td><td id="os2">—</td><td id="ox2">—</td><td><div class="barwrap"><div class="bar" id="ob2"></div></div></td><td id="or2">—</td></tr>
+          <tr><td class="r">Out semi (~Jul 14)</td><td>18%</td><td id="od3">—</td><td id="os3">—</td><td id="ox3">—</td><td><div class="barwrap"><div class="bar" id="ob3"></div></div></td><td id="or3">—</td></tr>
+          <tr><td class="r hot">Reach final (Jul 19)</td><td>12%</td><td id="od4">—</td><td id="os4">—</td><td id="ox4">—</td><td><div class="barwrap"><div class="bar" id="ob4"></div></div></td><td id="or4">—</td></tr>
+          <tr><td class="r hot">WIN it</td><td>15%</td><td id="od5">—</td><td id="os5">—</td><td id="ox5">—</td><td><div class="barwrap"><div class="bar" id="ob5"></div></div></td><td id="or5">—</td></tr>
+        </table>
+        <div class="callout" style="margin-top:14px"><b>Read it as:</b> you set <b id="cRate">—</b>/day. You commit the floor (<b id="cFloor">—</b> = <span id="cFloorD">—</span> days); realistically you'll spend <b id="cExp">—</b>; the ceiling is <span id="cCeil">—</span> as champions. You only pay for days they're alive, plus the two fixed pillars.</div>
+      </div>
+    </section>
 
-  <!-- PHASES -->
-  <div class="card">
-    <h2 class="k">The campaign period, in four moves</h2>
-    <div class="phases">
-      <div class="ph"><div class="d">Jun 25 → Jul 3</div><h3>Upfront (fixed)</h3><p>9 committed days. Ride Messi's all-time-scorer moment, all four markets.</p></div>
-      <div class="ph"><div class="d">Jul 4 → Jul 7</div><h3>Opportunistic begins</h3><p>R16. Every day alive = one more day of spend. Build the retargeting pool.</p></div>
-      <div class="ph peak"><div class="d">Jul 9 → Jul 19</div><h3>Peak days</h3><p>QF → SF → Final, plus the fixed last-dance tail on the captain's final match.</p></div>
-      <div class="ph"><div class="d">Jul 20 → Aug 17</div><h3>Harvest</h3><p>Afterglow. Flip to conversion, retarget the warmed pool. Draw Aug 31.</p></div>
-    </div>
-  </div>
+    <!-- 06 -->
+    <section id="s6">
+      <div class="snum">06</div><h2>Regional split &amp; audience saturation</h2>
+      <div class="card">
+        <h2 class="k">Split at this daily rate + saturation</h2>
+        <p class="sub">Priority split — <b>MY 50% · SG 25% · TH 10% · ID 10% · PH 5%</b>, weighted to the lead World Card markets. This concentrates budget on the <b>smaller</b> audiences, so MY + SG are the saturation risk. "Days to cover" assumes <b>broad</b> targeting.</p>
+        <table>
+          <tr><th>Market</th><th>Daily</th><th>Share</th><th>Broad reach 25-55</th><th>Impr / day</th><th>Days to cover once</th><th>Primary job</th></tr>
+          <tr><td class="r hot">Malaysia</td><td id="rg_d_my">—</td><td>50%</td><td>~15M</td><td id="rg_i_my">—</td><td id="rg_c_my" class="hot">—</td><td>Lead — awareness + convert</td></tr>
+          <tr><td class="r hot">Singapore</td><td id="rg_d_sg">—</td><td>25%</td><td>~3M</td><td id="rg_i_sg">—</td><td id="rg_c_sg" class="hot">—</td><td>Convert (premium, capped)</td></tr>
+          <tr><td class="r">Thailand</td><td id="rg_d_th">—</td><td>10%</td><td>~30M</td><td id="rg_i_th">—</td><td id="rg_c_th">—</td><td>Reach (headroom)</td></tr>
+          <tr><td class="r">Indonesia</td><td id="rg_d_id">—</td><td>10%</td><td>~70M</td><td id="rg_i_id">—</td><td id="rg_c_id">—</td><td>Reach (headroom)</td></tr>
+          <tr><td class="r">Philippines</td><td id="rg_d_ph">—</td><td>5%</td><td>~45M</td><td id="rg_i_ph">—</td><td id="rg_c_ph">—</td><td>Reach (new market)</td></tr>
+        </table>
+        <div class="callout" style="margin-top:14px"><b>The saturation problem:</b> 75% on MY + SG concentrates spend where the audience is smallest — even <b>broad</b>, MY covers its whole reachable audience in ~8 days, SG in ~9 (≈3–4× frequency over a full run). Run it <b>narrow</b> and they burn out in ~1 day. So broad is mandatory, hold a frequency cap, and pivot MY + SG to conversion/retargeting from ~day 8–10.</div>
+      </div>
+      <p class="body" style="margin-top:6px"><b>How to spend US$3,000/day without burning the audience:</b></p>
+      <ul class="body">
+        <li><b>Go broad</b> — geo + age + Advantage+ audience. Narrow ICP can't absorb the budget and chokes delivery.</li>
+        <li><b>Frequency cap ~2–3/week</b>; broad gives the room to honour it.</li>
+        <li><b>Widen placements</b> — FB Feed + Stories + Reels + IG + Audience Network = more inventory.</li>
+        <li><b>Rotate all 5 creatives</b> — at this frequency they fight wear-out (at low budget 2 was right; at US$3k/day, 5).</li>
+        <li><b>Saturation = pivot signal</b> — when reach plateaus and frequency climbs, shift that market awareness → conversion. MY/SG trip it first (~day 8–10).</li>
+        <li><b>TH/ID/PH are the relief valve</b> — huge headroom if MY/SG run hot.</li>
+      </ul>
+    </section>
 
-  <!-- CAVEAT -->
-  <div class="card">
-    <h2 class="k">How to run it live</h2>
-    <p class="note"><b>Pre-approve the per-day rate</b> and we simply keep the meter running each day they're alive, no re-approval per round. The two fixed pillars (9 upfront days + the 5-day last-dance tail) are committed; everything past Jul 3 is day-by-day and stops the moment they exit. <b>Optional refinement:</b> if a flat rate feels too even, we can let the deep-round days (QF/SF/Final) run at a higher per-day rate, the model already isolates them.</p>
-  </div>
+    <!-- 07 -->
+    <section id="s7">
+      <div class="snum">07</div><h2>Creative — two Messi sets, all 5 in rotation</h2>
+      <p class="body">10 approved assets (5 designs × standard + card). At US$3k/day the audience sees ads often, so we <b>rotate all 5</b> for freshness — but the <b>two Messi-led sets are the core</b> (concentration beats spread for learning).</p>
+      <ul class="body">
+        <li><b>Awareness</b> = Messi standard frames (Poster 2 centre, Poster 4 back). Maximum stopping power for the fame job.</li>
+        <li><b>Conversion</b> = the card variants (product cue) + 2–3 briefed product-led cuts ("no FX fees · 1% cashback").</li>
+        <li><b>SF/Final hook</b> = "the captain's last dance" — likely his last World Cup match, the strongest emotional cut of the campaign.</li>
+        <li><b>Compliance</b> = Messi's visual is licensed; the copy never names him. No "World Cup / FIFA" wording. WF lock-up stays prominent (guards the celebrity "vampire" effect).</li>
+      </ul>
+    </section>
 
+    <!-- 08 -->
+    <section id="s8">
+      <div class="snum">08</div><h2>Targeting &amp; audience</h2>
+      <div class="two">
+        <div class="box"><h4><span class="dot" style="background:#ff0051"></span>Awareness — broad</h4><ul>
+          <li>Geo + age 25–55 + Advantage+ audience</li>
+          <li>Advantage+ placements (Feed, Stories, Reels, IG, Audience Network)</li>
+          <li>Frequency cap ~2–3/week</li>
+          <li>No narrow interest cage — it can't absorb the budget</li>
+        </ul></div>
+        <div class="box"><h4><span class="dot" style="background:#1f2323"></span>Conversion — tight</h4><ul>
+          <li>Seller interest steer: Shopee, Lazada, Shopify, Amazon, dropshipping</li>
+          <li>Retarget awareness engagers + landing visitors</li>
+          <li>Lookalike of the pilot sign-ups (seed, then scale)</li>
+          <li>MY + SG primary; pivot in from ~day 8–10</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <!-- 09 -->
+    <section id="s9">
+      <div class="snum">09</div><h2>Measurement &amp; KPIs</h2>
+      <ul class="body">
+        <li><b>Awareness:</b> reach, frequency (≤2–3/wk), CPM, and <b>branded-search lift</b> in each market — capture a baseline now. Not judged on sign-ups.</li>
+        <li><b>Conversion:</b> cost per landing-page-view → <b>cost per sign-up</b> once the pixel is live, plus land→sign-up rate (the router's impact).</li>
+        <li><b>Live tracking:</b> a shared Google Sheet joins Meta spend/clicks to the GA sign-up funnel, refreshed routinely, so any team (and the other office) reads the same numbers.</li>
+      </ul>
+    </section>
+
+    <!-- 10 -->
+    <section id="s10">
+      <div class="snum">10</div><h2>Running it live</h2>
+      <ul class="body">
+        <li><b>Pre-approve the per-day rate</b> — the meter runs each day Argentina are alive, no re-approval per round; it stops the moment they exit.</li>
+        <li><b>Match-day burst:</b> an extra push in the 24–48h after each Argentina win, when the spike is highest.</li>
+        <li><b>Saturation pivot:</b> shift MY + SG from awareness → conversion/retargeting around day 8–10.</li>
+        <li><b>Hand-off:</b> post-final, share the warm audience to the paid/performance team (Business Manager) for deep product conversion through the draw.</li>
+        <li><b>Prerequisites (fast-follow):</b> the Meta pixel + the journey router go live before conversion ramps.</li>
+      </ul>
+    </section>
+
+    <!-- 11 -->
+    <section id="s11">
+      <div class="snum">11</div><h2>Risks &amp; dependencies</h2>
+      <ul class="body">
+        <li><b>Argentina advancing</b> — the budget tracks the run; adaptive, stops on exit. Likely deep (holders, Messi in record form) but not guaranteed.</li>
+        <li><b>Total exposure</b> — at US$3,000/day the range is ~US$42k (out R32) to ~US$90k (champions). Confirm.</li>
+        <li><b>Philippines is new</b> — verify World Card availability/eligibility for PH businesses and route PH to the SEA landing.</li>
+        <li><b>Pixel not yet live</b> — conversion optimises on landing-page-views until it is.</li>
+        <li><b>Audience saturation</b> in MY/SG (managed via broad + cap + pivot, section 06).</li>
+      </ul>
+    </section>
+
+    <!-- 12 -->
+    <section id="s12">
+      <div class="snum">12</div><h2>Next steps</h2>
+      <ul class="body">
+        <li><b>Confirm:</b> the US$3,000/day rate &amp; ~US$42–90k exposure, PH inclusion, and whether to auto-pivot MY/SG at day 8.</li>
+        <li><b>I build paused:</b> awareness (broad, Messi sets, freq cap) + conversion (card + seller steer, retarget) across MY/SG/TH/ID/PH — then you activate.</li>
+        <li><b>In parallel:</b> pixel on the landings, the journey router, the branded-search baseline, and the Business-Manager audience-share to the paid team.</li>
+      </ul>
+      <div class="callout"><b>Nothing runs until you say go.</b> Per the standing rule, everything is built paused with a review summary; you flip it live.</div>
+    </section>
+
+  </main>
 </div>
 
 <script>
 (function(){
   var imprPerD=899.0, clkPerD=10.90, landPerD=3.726, rsPerD=0.018676, suPerD=0.007004;
-  var UP=9, CH=3;                                  // upfront days, champions tail
-  var OPP=[0,3,7,11,16,16];                         // days alive past R32 by outcome
+  var UP=9, CH=3;
+  var OPP=[0,3,7,11,16,16];
   var PROB=[0.13,0.20,0.22,0.18,0.12,0.15];
-  var STAGEDAYS=[6,3,3,4,4,5];                       // per-stage day counts: group, R32, R16, QF, SF, final-window
+  var STAGEDAYS=[6,3,3,4,4,5];
   var rate=document.getElementById('rate'), ld=document.getElementById('ld'), upl=document.getElementById('uplift'), uplLab=document.getElementById('upliftLab');
   function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
   function usd(n){ return 'US$'+fmt(n); }
   function set(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
   function recompute(){
     var R=parseFloat(rate.value)||0, LD=parseFloat(ld.value)||0, up=parseFloat(upl.value)||1;
-    var days=[];
-    for(var i=0;i<6;i++){ days[i]=UP+LD+OPP[i]+(i===5?CH:0); }
+    var days=[]; for(var i=0;i<6;i++){ days[i]=UP+LD+OPP[i]+(i===5?CH:0); }
     var spend=days.map(function(d){return R*d;});
     var expD=0,exp=0; for(var i=0;i<6;i++){ expD+=PROB[i]*days[i]; exp+=PROB[i]*spend[i]; }
     var floor=spend[0], ceil=spend[5];
@@ -239,19 +401,14 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
     set('hFloor',usd(floor)); set('hFloorD',days[0]+' days'); set('hExp',usd(exp)); set('hExpD',expD.toFixed(0)+' days');
     set('hCeil',usd(ceil)); set('hCeilD',days[5]+' days'); set('hRatio','×'+(floor>0?(ceil/floor).toFixed(1):'—'));
     set('cRate',usd(R)); set('cFloor',usd(floor)); set('cFloorD',days[0]); set('cExp',usd(exp)); set('cCeil',usd(ceil));
-    // funnel from expected
     set('outSpend',usd(exp)); set('outImpr',fmt(exp*imprPerD)); set('outClk',fmt(exp*clkPerD));
     set('outLand',fmt(exp*landPerD)); set('outRS',fmt(exp*rsPerD*up)); set('outSU',fmt(exp*suPerD*up));
-    // range rows
     for(var j=0;j<6;j++){
       set('od'+j,days[j]+'d'); set('os'+j,usd(spend[j])); set('ox'+j, floor>0?(spend[j]/floor).toFixed(1)+'×':'—'); set('or'+j,fmt(spend[j]*rsPerD*up));
       var bar=document.getElementById('ob'+j); if(bar) bar.style.width=(ceil>0?spend[j]/ceil*100:0).toFixed(1)+'%';
     }
-    // committed-days stacked bar
     var seg=function(cls,d,lbl){ return d>0?'<div class="seg '+cls+'" style="flex:'+d+'">'+(d>=2?lbl:'')+'</div>':''; };
-    document.getElementById('daysbar').innerHTML =
-      seg('up',UP,UP+'d upfront')+seg('opp',OPP[5],OPP[5]+'d opportunistic')+seg('ld',LD,LD+'d last-dance')+seg('ch',CH,'+'+CH+'d champ');
-    // chart per-stage bars = stage days × rate; final stage adds last-dance tail
+    document.getElementById('daysbar').innerHTML = seg('up',UP,UP+'d upfront')+seg('opp',OPP[5],OPP[5]+'d opportunistic')+seg('ld',LD,LD+'d last-dance')+seg('ch',CH,'+'+CH+'d champ');
     set('bar0','$'+fmt(R*STAGEDAYS[0])); set('bar1','$'+fmt(R*STAGEDAYS[1])); set('bar2','$'+fmt(R*STAGEDAYS[2]));
     set('bar3','$'+fmt(R*STAGEDAYS[3])); set('bar4','$'+fmt(R*STAGEDAYS[4])); set('bar5','$'+fmt(R*(STAGEDAYS[5]+LD)));
     curSpend=spend; curUp=up; drawDist();
@@ -285,22 +442,26 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
   [rate,ld,upl].forEach(function(el){ el.addEventListener('input',recompute); });
   recompute();
 })();
-</script>
-<script>
 (function(){
   function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
   function set(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
-  // market: share, broad reach (25-55), est CPM US$
   var M=[['my',0.50,15e6,0.77],['sg',0.25,3e6,2.21],['th',0.10,30e6,0.80],['id',0.10,70e6,0.70],['ph',0.05,45e6,0.60]];
   function drawRegions(){
     var R=parseFloat(document.getElementById('rate').value)||0;
-    M.forEach(function(m){
-      var daily=R*m[1], impr=m[3]>0?daily/m[3]*1000:0, days=impr>0?m[2]/impr:0;
-      set('rg_d_'+m[0],'US$'+fmt(daily)); set('rg_i_'+m[0],fmt(impr)); set('rg_c_'+m[0],Math.round(days)+'d');
-    });
+    M.forEach(function(m){ var daily=R*m[1], impr=m[3]>0?daily/m[3]*1000:0, days=impr>0?m[2]/impr:0;
+      set('rg_d_'+m[0],'US$'+fmt(daily)); set('rg_i_'+m[0],fmt(impr)); set('rg_c_'+m[0],Math.round(days)+'d'); });
   }
   var r=document.getElementById('rate'); if(r) r.addEventListener('input',drawRegions);
   drawRegions();
+})();
+(function(){
+  var links=[].slice.call(document.querySelectorAll('#nav a')), secs=links.map(function(a){return document.getElementById(a.getAttribute('href').slice(1));});
+  function onScroll(){
+    var y=window.scrollY+120, idx=0;
+    for(var i=0;i<secs.length;i++){ if(secs[i] && secs[i].offsetTop<=y) idx=i; }
+    links.forEach(function(a,i){ a.classList.toggle('active', i===idx); });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
 })();
 </script>
 </body>
