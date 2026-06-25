@@ -55,6 +55,7 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
 .ph h3{font-size:15px;font-weight:700;margin:5px 0 7px}.ph p{font-size:12.6px;color:#5b626a;line-height:1.48}.ph.peak{border-color:#ff0051;border-width:1.5px}.ph.peak h3{color:#ff0051}
 .callout{background:#fff7f9;border:1px solid #ffd6e2;border-radius:12px;padding:15px 18px;font-size:13.8px;color:#5b626a;line-height:1.6}.callout b{color:#1f2323}
 .note{font-size:13.6px;color:#5b626a;line-height:1.66}.note b{color:#1f2323}
+#distModes button{border:none;background:#fff;font-family:'Poppins';font-size:12.5px;font-weight:500;padding:8px 15px;cursor:pointer;color:#69727d}#distModes button.on{background:#ff0051;color:#fff;font-weight:600}
 @media(max-width:900px){.phases{grid-template-columns:1fr 1fr}.funnel{grid-template-columns:repeat(3,1fr)}.barwrap{width:80px}}
 </style>
 </head>
@@ -101,6 +102,18 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
       <div class="ft hot"><div class="n" id="outRS">—</div><div class="l">Sign-up starts</div></div>
       <div class="ft hot"><div class="n" id="outSU">—</div><div class="l">Completed</div></div>
     </div>
+  </div>
+
+  <!-- DISTRIBUTION -->
+  <div class="card">
+    <h2 class="k">Outcome distribution — weighted by chance</h2>
+    <p class="sub">Each column is an outcome. <b>Width = its chance</b>, <b>height = what it produces</b>, so the <b>area = its contribution to the expected</b>. The dashed line is the chance-weighted average (the "expected" figure). Toggle what the height shows.</p>
+    <div class="modes" id="distModes">
+      <button data-m="starts" class="on">Sign-up starts</button>
+      <button data-m="completed">Completed</button>
+      <button data-m="spend">Spend</button>
+    </div>
+    <div class="chartwrap"><svg id="distSvg" viewBox="0 0 1000 350" xmlns="http://www.w3.org/2000/svg"></svg></div>
   </div>
 
   <!-- RANGE -->
@@ -217,7 +230,34 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
     // chart per-stage bars = stage days × rate; final stage adds last-dance tail
     set('bar0','$'+fmt(R*STAGEDAYS[0])); set('bar1','$'+fmt(R*STAGEDAYS[1])); set('bar2','$'+fmt(R*STAGEDAYS[2]));
     set('bar3','$'+fmt(R*STAGEDAYS[3])); set('bar4','$'+fmt(R*STAGEDAYS[4])); set('bar5','$'+fmt(R*(STAGEDAYS[5]+LD)));
+    curSpend=spend; curUp=up; drawDist();
   }
+  var curSpend=[], curUp=1, distMetric='starts';
+  var DC=['#ffd0de','#ffb3cb','#ff8fb3','#ff6699','#ff3377','#ff0051'];
+  var NM=['Out R32','Out R16','Out QF','Out SF','Final','Win'];
+  function drawDist(){
+    var svg=document.getElementById('distSvg'); if(!svg) return;
+    var W=850,X0=90,Y0=295,H=225, vals=[];
+    for(var i=0;i<6;i++){ vals[i]= distMetric==='spend'?curSpend[i] : distMetric==='completed'?curSpend[i]*suPerD*curUp : curSpend[i]*rsPerD*curUp; }
+    var maxV=Math.max.apply(null,vals)*1.16||1, exp=0; for(var i=0;i<6;i++) exp+=PROB[i]*vals[i];
+    var expY=Y0-exp/maxV*H, s='', cum=0;
+    s+='<text x="'+X0+'" y="24" font-size="10.5" fill="#9aa1a1">width = chance · height = '+(distMetric==='spend'?'spend':distMetric==='completed'?'completed sign-ups':'sign-up starts')+' · area = contribution to expected</text>';
+    s+='<line x1="'+X0+'" y1="'+Y0+'" x2="'+(X0+W)+'" y2="'+Y0+'" stroke="#d4d7da"/>';
+    for(var i=0;i<6;i++){
+      var w=PROB[i]*W, x=X0+cum*W, h=vals[i]/maxV*H, y=Y0-h;
+      s+='<rect x="'+(x+1.5)+'" y="'+y+'" width="'+(w-3)+'" height="'+h+'" rx="3" fill="'+DC[i]+'"/>';
+      var vl= distMetric==='spend'?'$'+fmt(vals[i]):fmt(vals[i]);
+      s+='<text x="'+(x+w/2)+'" y="'+(y-7)+'" text-anchor="middle" font-size="12.5" font-weight="800" fill="#1f2323">'+vl+'</text>';
+      s+='<text x="'+(x+w/2)+'" y="'+(Y0+19)+'" text-anchor="middle" font-size="12" font-weight="700" fill="#69727d">'+Math.round(PROB[i]*100)+'%</text>';
+      s+='<text x="'+(x+w/2)+'" y="'+(Y0+33)+'" text-anchor="middle" font-size="9.5" fill="#9aa1a1">'+NM[i]+'</text>';
+      cum+=PROB[i];
+    }
+    s+='<line x1="'+X0+'" y1="'+expY+'" x2="'+(X0+W)+'" y2="'+expY+'" stroke="#ff0051" stroke-width="1.5" stroke-dasharray="5,4"/>';
+    s+='<text x="'+(X0+W)+'" y="'+(expY-7)+'" text-anchor="end" font-size="12" font-weight="800" fill="#ff0051">expected '+(distMetric==='spend'?'US$'+fmt(exp):fmt(exp))+'</text>';
+    svg.innerHTML=s;
+  }
+  var dm=document.getElementById('distModes');
+  if(dm) dm.addEventListener('click',function(e){ var b=e.target.closest('button'); if(!b)return; [].forEach.call(dm.children,function(x){x.classList.remove('on')}); b.classList.add('on'); distMetric=b.dataset.m; drawDist(); });
   [rate,ld,upl].forEach(function(el){ el.addEventListener('input',recompute); });
   recompute();
 })();
