@@ -333,6 +333,19 @@
         <li><b>Saturation is the pivot signal:</b> when reach plateaus and frequency climbs, shift that market awareness to conversion. MY and SG trip it first.</li>
         <li><b>TH, ID, PH are the relief valve:</b> huge headroom if MY and SG run hot.</li>
       </ul>
+      <div class="sub">
+        <div class="k">Platform split per market, Facebook + Instagram</div>
+        <div class="kk">Each market splits by where its audience actually lives. Philippines and Thailand skew Facebook (mass reach); Singapore skews Instagram (affluent, younger, premium). Awareness leans Facebook for cheap reach; conversion uses both, with Instagram favoured for product and younger sellers. Daily values follow the rate above.</div>
+        <table>
+          <tr><th>Market</th><th>Facebook</th><th>Instagram</th><th>FB / day</th><th>IG / day</th><th>Why this split</th></tr>
+          <tr><td class="r">Malaysia</td><td>60%</td><td>40%</td><td id="pf_my">—</td><td id="pi_my">—</td><td>High FB penetration; IG strong urban + sellers</td></tr>
+          <tr><td class="r">Singapore</td><td>45%</td><td>55%</td><td id="pf_sg">—</td><td id="pi_sg">—</td><td>IG over-indexes, affluent and younger</td></tr>
+          <tr><td class="r">Thailand</td><td>65%</td><td>35%</td><td id="pf_th">—</td><td id="pi_th">—</td><td>FB-dominant; IG growing urban</td></tr>
+          <tr><td class="r">Indonesia</td><td>60%</td><td>40%</td><td id="pf_id">—</td><td id="pi_id">—</td><td>FB mass reach; IG younger e-commerce</td></tr>
+          <tr><td class="r">Philippines</td><td>75%</td><td>25%</td><td id="pf_ph">—</td><td id="pi_ph">—</td><td>FB extremely dominant locally</td></tr>
+        </table>
+        <div class="note"><b>Run it on Advantage+ placements</b> so Meta optimises Facebook against Instagram per impression toward each ad set's goal (awareness or sign-ups). These percentages are the planned weighting and the guardrails: keep Instagram well-fed in SG where it over-indexes, don't waste Instagram budget in PH where Facebook owns the audience, and let conversion lean to whichever platform returns the cheaper sign-up per market.</div>
+      </div>
     </section>
 
     <!-- 07 -->
@@ -477,11 +490,13 @@
 (function(){
   function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
   function set(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
-  var M=[['my',0.50,15e6,0.77],['sg',0.25,3e6,2.21],['th',0.10,30e6,0.80],['id',0.10,70e6,0.70],['ph',0.05,45e6,0.60]];
+  // market: share, broad reach, est CPM, Facebook share of platform split
+  var M=[['my',0.50,15e6,0.77,0.60],['sg',0.25,3e6,2.21,0.45],['th',0.10,30e6,0.80,0.65],['id',0.10,70e6,0.70,0.60],['ph',0.05,45e6,0.60,0.75]];
   function drawRegions(){
     var R=parseFloat(document.getElementById('rate').value)||0;
     M.forEach(function(m){ var daily=R*m[1], impr=m[3]>0?daily/m[3]*1000:0, days=impr>0?m[2]/impr:0;
-      set('rg_d_'+m[0],'US$'+fmt(daily)); set('rg_i_'+m[0],fmt(impr)); set('rg_c_'+m[0],Math.round(days)+'d'); });
+      set('rg_d_'+m[0],'US$'+fmt(daily)); set('rg_i_'+m[0],fmt(impr)); set('rg_c_'+m[0],Math.round(days)+'d');
+      set('pf_'+m[0],'US$'+fmt(daily*m[4])); set('pi_'+m[0],'US$'+fmt(daily*(1-m[4]))); });
   }
   var r=document.getElementById('rate'); if(r) r.addEventListener('input',drawRegions);
   drawRegions();
