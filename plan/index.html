@@ -73,7 +73,7 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
     <h2 class="k">The one number that matters: per-day spend</h2>
     <p class="sub">Days from real fixtures. Committed = 9 upfront (Jun 25→Jul 3) + your last-dance tail. Opportunistic = every day they survive past R32 (up to Jul 19). Conversions off the SG+MY pilot (US$54 / sign-up start).</p>
     <div class="ins">
-      <div class="inb"><div class="t">Spend per day (US$)</div><input id="rate" type="number" value="3000" min="0" step="100"><div class="d">Total daily across MY · SG · TH · ID.</div></div>
+      <div class="inb"><div class="t">Spend per day (US$)</div><input id="rate" type="number" value="3000" min="0" step="100"><div class="d">Total daily across MY · SG · TH · ID · PH.</div></div>
       <div class="inb"><div class="t">Last-dance tail (days)</div><input id="ld" type="number" value="5" min="0" step="1"><div class="d">After the captain's final match.</div></div>
     </div>
     <div class="upl">
@@ -107,23 +107,24 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
   <!-- REGIONAL SPLIT + SATURATION -->
   <div class="card">
     <h2 class="k">Regional split + audience saturation at this daily rate</h2>
-    <p class="sub">At US$3,000/day the split is driven by who can <b>absorb</b> it, not just who converts. Big cheap markets (ID, TH) carry the reach; SG is capped (smallest + priciest, saturates first). Impressions/day and "days to cover once" assume <b>broad</b> targeting.</p>
+    <p class="sub">Your priority split — <b>MY 50% · SG 25% · TH 10% · ID 10% · PH 5%</b>, weighted to the lead World Card markets. Note this concentrates budget on the <b>smaller</b> audiences, so MY + SG become the saturation risk (see below). Impressions/day and "days to cover once" assume <b>broad</b> targeting.</p>
     <table>
       <tr><th>Market</th><th>Daily</th><th>Share</th><th>Broad reach 25-55</th><th>Impr / day</th><th>Days to cover once</th><th>Primary job</th></tr>
-      <tr><td class="r">Indonesia</td><td id="rg_d_id">—</td><td>32%</td><td>~70M</td><td id="rg_i_id">—</td><td id="rg_c_id">—</td><td>Awareness (capacity)</td></tr>
-      <tr><td class="r">Malaysia</td><td id="rg_d_my">—</td><td>27%</td><td>~15M</td><td id="rg_i_my">—</td><td id="rg_c_my">—</td><td>Awareness + convert</td></tr>
-      <tr><td class="r">Thailand</td><td id="rg_d_th">—</td><td>23%</td><td>~30M</td><td id="rg_i_th">—</td><td id="rg_c_th">—</td><td>Awareness (capacity)</td></tr>
-      <tr><td class="r hot">Singapore</td><td id="rg_d_sg">—</td><td>18%</td><td>~3M</td><td id="rg_i_sg">—</td><td id="rg_c_sg" class="hot">—</td><td>Convert (capped)</td></tr>
+      <tr><td class="r hot">Malaysia</td><td id="rg_d_my">—</td><td>50%</td><td>~15M</td><td id="rg_i_my">—</td><td id="rg_c_my" class="hot">—</td><td>Lead — awareness + convert</td></tr>
+      <tr><td class="r hot">Singapore</td><td id="rg_d_sg">—</td><td>25%</td><td>~3M</td><td id="rg_i_sg">—</td><td id="rg_c_sg" class="hot">—</td><td>Convert (premium, capped)</td></tr>
+      <tr><td class="r">Thailand</td><td id="rg_d_th">—</td><td>10%</td><td>~30M</td><td id="rg_i_th">—</td><td id="rg_c_th">—</td><td>Reach (headroom)</td></tr>
+      <tr><td class="r">Indonesia</td><td id="rg_d_id">—</td><td>10%</td><td>~70M</td><td id="rg_i_id">—</td><td id="rg_c_id">—</td><td>Reach (headroom)</td></tr>
+      <tr><td class="r">Philippines</td><td id="rg_d_ph">—</td><td>5%</td><td>~45M</td><td id="rg_i_ph">—</td><td id="rg_c_ph">—</td><td>Reach (new market)</td></tr>
     </table>
-    <div class="callout" style="margin-top:16px"><b>The saturation problem, quantified:</b> run it <b>narrow</b> (sellers-only ICP, ~10% of broad) and US$3,000/day burns through every market in <b>~1–5 days</b> — SG in about <b>one day</b> — then you're just paying rising frequency. So at this budget you <b>must run broad</b>; that's also exactly right for the Messi awareness job. SG saturates first even broad (~12 days) → keep it capped and pivot SG to conversion early.</div>
+    <div class="callout" style="margin-top:16px"><b>Heads-up — this split saturates your two lead markets fastest.</b> 75% on MY + SG concentrates spend where the audience is smallest: even <b>broad</b>, MY covers its whole reachable audience in ~8 days and SG in ~9 (≈3–4× frequency over a full run). Run it <b>narrow</b> and they'd burn out in ~1 day. So broad is mandatory, hold a frequency cap, and <b>pivot MY + SG to conversion/retargeting from ~day 8–10</b> as awareness saturates — which is where their sign-up value is anyway. TH/ID/PH have huge headroom; nudge a few points there if MY/SG run too hot.</div>
     <p class="note" style="margin-top:14px"><b>How to actually spend US$3,000/day without burning the audience:</b></p>
     <table style="margin-top:6px">
       <tr><td class="r" style="width:34%">1 · Go broad</td><td>Geo + age + Advantage+ audience. Drop the narrow interest cage on awareness — it can't absorb the budget and chokes delivery.</td></tr>
-      <tr><td class="r">2 · Weight to ID/TH/MY</td><td>They have the reach headroom; SG capped at ~18% so it isn't flogged.</td></tr>
+      <tr><td class="r">2 · Relief valve in TH/ID/PH</td><td>If MY/SG frequency runs hot, shift a few points to TH/ID/PH — they have huge headroom.</td></tr>
       <tr><td class="r">3 · Frequency cap ~2–3/wk</td><td>Broad gives the room to honour a cap, so no one gets hit 15×.</td></tr>
       <tr><td class="r">4 · Widen placements</td><td>FB Feed + Stories + Reels + IG + Audience Network = more inventory to soak up spend.</td></tr>
       <tr><td class="r">5 · Rotate all 5 creatives</td><td>At this frequency the 5 designs finally earn their place — they fight wear-out (at low budget 2 was right; at US$3k/day, 5).</td></tr>
-      <tr><td class="r">6 · Saturation = pivot signal</td><td>When a market's reach plateaus and frequency climbs, shift that money awareness → retargeting/conversion. SG trips this first.</td></tr>
+      <tr><td class="r">6 · Saturation = pivot signal</td><td>When a market's reach plateaus and frequency climbs, shift that money awareness → retargeting/conversion. MY + SG trip this around day 8–10.</td></tr>
     </table>
   </div>
 
@@ -290,7 +291,7 @@ td.r{font-weight:600}.hot{color:#ff0051;font-weight:600}
   function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
   function set(id,v){ var e=document.getElementById(id); if(e) e.textContent=v; }
   // market: share, broad reach (25-55), est CPM US$
-  var M=[['id',0.32,70e6,0.70],['my',0.27,15e6,0.77],['th',0.23,30e6,0.80],['sg',0.18,3e6,2.21]];
+  var M=[['my',0.50,15e6,0.77],['sg',0.25,3e6,2.21],['th',0.10,30e6,0.80],['id',0.10,70e6,0.70],['ph',0.05,45e6,0.60]];
   function drawRegions(){
     var R=parseFloat(document.getElementById('rate').value)||0;
     M.forEach(function(m){
